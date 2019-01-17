@@ -1,0 +1,19 @@
+%nav.navbar.header-nav.navbar-expand-lg.navbar-light
+  .container
+    = link_to root_path, class: 'navbar-brand brand col-5' do
+      = image_tag 'sparc_request_header.png', class: 'w-100'
+    = link_to root_path, class: 'navbar-brand brand-alt' do
+      = image_tag 'logo.png', class: 'w-100'
+    .nav-container.col-7
+      = link_to 'https://research.musc.edu/resources/sctr', class: 'col-6 department-link', target: :blank do
+        = image_tag 'sctr_header.png', class: 'department-logo'
+      .collapse.navbar-collapse.justify-content-end
+        .navbar-nav
+          .nav-item
+            = link_to 'About', 'https://sparcrequest.atlassian.net/wiki/spaces/RD/overview', class: 'nav-link', target: :blank
+          .nav-item
+            = link_to 'Contact', 'https://sparcrequest.atlassian.net/wiki/spaces/RD/pages/31653983/Contact+Us', class: 'nav-link', target: :blank
+          .nav-item
+            = link_to 'GitHub', 'https://github.com/sparc-request/sparc-request', class: 'nav-link', target: :blank
+          .nav-item
+            = link_to 'Sign in', 'javascript:void(0)', class: 'nav-link'

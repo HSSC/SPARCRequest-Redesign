@@ -1,0 +1,35 @@
+%footer.bg-light
+  %nav.navbar.navbar-light.footer-nav
+    .container
+      = link_to root_path, class: 'navbar-brand col-2' do
+        = image_tag 'logo.png', class: 'logo'
+      .navbar-nav.col-8
+        .nav-item
+          = link_to 'Home', root_path, class: 'nav-link'
+        .nav-item
+          = link_to 'About', 'https://sparcrequest.atlassian.net/wiki/spaces/RD/overview', class: 'nav-link', target: :blank
+          = link_to 'https://sparcrequest.atlassian.net/wiki/spaces/RD/blog/', class: 'nav-link', target: :blank do
+            %small
+              = '- Wiki'
+          = link_to 'javascript:void(0)', class: 'nav-link', target: :blank do
+            %small
+              = '- MUSC'
+          = link_to 'javascript:void(0)', class: 'nav-link', target: :blank do
+            %small
+              = '- Partners'
+        .nav-item
+          = link_to 'Contact', 'https://sparcrequest.atlassian.net/wiki/spaces/RD/pages/31653983/Contact+Us', class: 'nav-link', target: :blank
+          = link_to 'javascript:void(0)', class: 'nav-link', target: :blank do
+            %small
+              = '- Feedback'
+        .nav-item
+          = link_to 'FAQs', 'javascript:void(0)', class: 'nav-link'
+      = link_to 'https://web.musc.edu', class: 'navbar-brand org-link col-2', target: :blank do
+        = image_tag 'musc_header.png', class: 'org-logo'
+  .copyright-container
+    .container
+      %p.copyright.col-9
+        = "Copyright © 2011-2019 MUSC Foundation for Research Development, All rights reserved"
+      .external-links.col-3
+        = link_to 'https://github.com/sparc-request/sparc-request', class: 'external-link', target: :blank do
+          = fa_icon 'github 2x', id: 'githubLink'
