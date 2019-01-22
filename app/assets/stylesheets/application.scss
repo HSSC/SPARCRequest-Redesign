@@ -13,9 +13,16 @@
 
 @import 'bootstrap-variables-custom';
 @import 'bootstrap';
+@import 'font-awesome-sprockets';
 @import 'font-awesome';
 
 @import 'bootstrap-custom';
 @import 'utilities';
 @import 'layout';
+@import 'navigation';
+
+@import 'banner';
+@import 'news_feed';
+@import 'google-calendar';
+
 @import 'home';

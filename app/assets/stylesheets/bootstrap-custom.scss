@@ -1,14 +1,40 @@
-.dropdown-menu {
-  .dropdown-item {
-    display: flex;
-    align-items: center;
+.dropdown {
+  .dropdown-toggle {
+    &:after {
+      vertical-align: middle;
+    }
+  }
+
+  .dropdown-menu {
+    .dropdown-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      &:active {
+        background: $gray-200;
+      }
+    }
   }
 }
 
 .notification-badge {
-  position: absolute;
-  left: 36px;
-  padding: 0;
   width: 16px;
   height: 16px;
+  left: 36px;
+  padding: 0;
+  position: absolute;
+}
+
+.btn.btn-outline-primary,
+.btn.btn-outline-secondary,
+.btn.btn-outline-success,
+.btn.btn-outline-warning,
+.btn.btn-outline-danger,
+.btn.btn-outline-info,
+.btn.btn-outline-light,
+.btn.btn-outline-dark {
+  &:not(:hover) {
+    background: white;
+  }
 }

@@ -21,7 +21,7 @@ gem 'sassc-rails'
 gem 'haml'
 gem 'haml-rails'
 gem 'jquery-rails'
-gem 'font-awesome-rails'
+gem 'font-awesome-sass'
 gem 'devise'
 gem 'mysql2'
 

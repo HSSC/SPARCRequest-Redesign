@@ -8,7 +8,7 @@
       .nav-container.col-9.p-0
         = link_to 'https://research.musc.edu/resources/sctr', class: 'col-2 department-link', target: :blank do
           = image_tag 'sctr_header.png', class: 'department-logo'
-        .collapse.navbar-collapse.justify-content-between
+        .collapse.navbar-collapse{ class: current_user ? 'justify-content-between' : 'justify-content-end' }
           - if current_user
             .navbar-nav
               .nav-item
@@ -19,26 +19,11 @@
                 = link_to 'Funding', 'javascript:void(0)', class: 'nav-link'
           .navbar-nav
             .nav-item
-              = link_to 'Home', root_path, class: 'nav-link', target: :blank
+              = link_to 'Home', root_path, class: 'nav-link'
             .nav-item
               = link_to 'About', 'https://sparcrequest.atlassian.net/wiki/spaces/RD/overview', class: 'nav-link', target: :blank
             .nav-item
               = link_to 'Contact', 'https://sparcrequest.atlassian.net/wiki/spaces/RD/pages/31653983/Contact+Us', class: 'nav-link', target: :blank
-            .nav-item
-              = link_to 'FAQs', 'javascript:void(0)', class: 'nav-link', target: :blank
-            - if current_user
-              .nav-item.dropdown
-                = link_to '#', class: 'nav-link dropdown-toggle text-secondary', role: 'button',data: { toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' } do
-                  %span><= fa_icon 'user-circle lg'
-                  %span.badge.badge-pill.badge-danger.notification-badge> &nbsp;
-                .dropdown-menu.dropdown-menu-right
-                  %h6.dropdown-header
-                    = 'Kyle Glick (glickk@musc.edu)'
-                  = link_to 'javascript:void(0)', class: 'dropdown-item' do
-                    = 'Notifications'
-                    %span.badge.badge-pill.badge-danger.ml-1
-                      = '2'
-                  = link_to 'Sign Out', destroy_user_session_path, class: 'dropdown-item text-danger'
-            - else
-              .nav-item
-                = link_to 'Sign In', new_user_session_path, class: 'nav-link'
+            = render 'layouts/header/news_feed'
+            = render 'layouts/header/google_calendar'
+            = render 'layouts/header/user_profile'

@@ -1,0 +1,36 @@
+.news {
+  .post {
+    display: inline-block;
+
+    .post-date {
+      color: theme-color('secondary');
+    }
+
+    .post-title, .post-date {
+      margin: 0;
+      font-weight: 300;
+    }
+  }
+}
+
+.news-section {
+  .container {
+    padding-bottom: 0;
+
+    .news-header {
+      border-right: 2px solid theme-color('warning');
+      padding-bottom: 3rem;
+    }
+
+    .news {
+      border-left: 2px solid theme-color('warning');
+      padding-bottom: 3rem;
+
+      .post {
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}

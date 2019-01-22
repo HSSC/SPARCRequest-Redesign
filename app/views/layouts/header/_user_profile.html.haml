@@ -1,0 +1,28 @@
+- if current_user
+  .nav-item.dropdown
+    = link_to 'javascript:void(0)', class: 'nav-link dropdown-toggle text-secondary', role: 'button', aria: { haspopup: 'true' } do
+      %span><= icon('fas', 'user-circle fa-lg')
+      %span.badge.badge-pill.badge-danger.notification-badge> &nbsp;
+    .dropdown-menu.dropdown-menu-right.mt-0
+      = link_to 'javascript:void(0)', class: 'dropdown-header d-flex text-secondary' do
+        = icon('fas', 'user-circle fa-4x mr-4')
+        %h5
+          = current_user.full_name
+          %br
+          %small
+            = "(#{current_user.email})"
+      .dropdown-divider
+      = link_to 'javascript:void(0)', class: 'dropdown-item text-secondary' do
+        = icon('far', 'envelope mr-1')
+        = 'Notifications'
+        %span.badge.badge-pill.badge-danger.ml-1
+          = '2'
+      = link_to 'javascript:void(0)', class: 'dropdown-item text-secondary' do
+        = icon('far', 'edit mr-1')
+        = 'Edit Profile'
+      = link_to destroy_user_session_path, method: :delete, class: 'dropdown-item text-danger' do
+        = icon('fas', 'sign-out-alt mr-1')
+        = 'Sign Out'
+- else
+  .nav-item
+    = link_to 'Sign In', new_user_session_path, class: 'nav-link'
