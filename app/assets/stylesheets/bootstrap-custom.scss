@@ -1,0 +1,14 @@
+.dropdown-menu {
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.notification-badge {
+  position: absolute;
+  left: 36px;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+}

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :pages do
+  devise_for :users
+
+  resource :page, only: [] do
     get :home
+    get :dashboard
   end
 
-  root to: 'pages#home'
+  root 'pages#home'
 end
