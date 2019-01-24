@@ -25,6 +25,9 @@ nav.navbar {
 }
 
 .header-nav {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
   .navbar-brand {
     display: flex;
     justify-content: flex-end;
@@ -35,40 +38,29 @@ nav.navbar {
     }
   }
 
-  .nav-container {
-    display: flex;
-    flex-flow: column;
-    flex: 1 auto;
+  .navbar-nav {
+    .nav-item {
+      display: flex;
+      align-items: center;
 
-    .department-link {
-      align-self: flex-end;
-      padding: 0 0 15px 0;
-    }
+      .nav-link {
+        &:not(.dropdown-toggle) {
+          position: relative;
 
-    .navbar-nav {
-      .nav-item {
-        display: flex;
-        align-items: center;
+          &:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 4px;
+            bottom: 0;
+            left: 1rem;
+            background: theme-color('warning');
+            transition: all 0.25s ease-in-out;
+          }
 
-        .nav-link {
-          &:not(.dropdown-toggle) {
-            position: relative;
-
+          &:hover {
             &:after {
-              content: '';
-              position: absolute;
-              width: 0;
-              height: 4px;
-              bottom: 0;
-              left: 1rem;
-              background: theme-color('warning');
-              transition: all 0.25s ease-in-out;
-            }
-
-            &:hover {
-              &:after {
-                width: calc(100% - 2rem);
-              }
+              width: calc(100% - 2rem);
             }
           }
         }

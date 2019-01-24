@@ -3,6 +3,12 @@
   flex: 0 0 20%;
   max-width: 20%;
 
+  #newProtocolButton {
+    &:after {
+      display: none;
+    }
+  }
+
   .card-body {
     flex: 0;
   }

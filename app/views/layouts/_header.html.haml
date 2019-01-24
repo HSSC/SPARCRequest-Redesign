@@ -1,32 +1,42 @@
-%header.bg-white.border-bottom#siteHeader
-  %nav.navbar.header-nav.navbar-expand-lg.navbar-light
-    .container-fluid.align-items-end.p-0
-      = link_to root_path, class: 'navbar-brand brand col-3' do
-        = image_tag 'sparc_request_header.png'
-      = link_to root_path, class: 'navbar-brand brand-alt' do
-        = image_tag 'logo.png'
-      .nav-container.col-9.p-0
-        = link_to 'https://research.musc.edu/resources/sctr', class: 'col-2 department-link', target: :blank do
-          = image_tag 'sctr_header.png', class: 'department-logo'
-        .collapse.navbar-collapse{ class: current_user ? 'justify-content-between' : 'justify-content-end' }
-          - if current_user
-            .navbar-nav
-              .nav-item
-                = link_to 'Home', root_path, class: 'nav-link'
-              .nav-item
-                = link_to 'Catalog', 'javascript:void(0)', class: 'nav-link'
-              .nav-item
-                = link_to 'Reports', 'javascript:void(0)', class: 'nav-link'
-              .nav-item
-                = link_to 'Funding', 'javascript:void(0)', class: 'nav-link'
-          .navbar-nav
-            - unless current_user
-              .nav-item
-                = link_to 'Home', root_path, class: 'nav-link'
-            .nav-item
-              = link_to 'About', 'https://sparcrequest.atlassian.net/wiki/spaces/RD/overview', class: 'nav-link', target: :blank
-            .nav-item
-              = link_to 'Contact', 'https://sparcrequest.atlassian.net/wiki/spaces/RD/pages/31653983/Contact+Us', class: 'nav-link', target: :blank
-            = render 'layouts/header/news_feed'
-            = render 'layouts/header/google_calendar'
-            = render 'layouts/header/user_profile'
+%header#siteHeader
+  .container-fluid.d-flex.justify-content-between.py-3
+    = link_to root_path, class: 'col-3 p-0' do
+      = image_tag 'sparc_request_header.png'
+    = link_to 'https://research.musc.edu/resources/sctr', class: 'col-2 p-0', target: :blank do
+      = image_tag 'sctr_header.png', class: 'department-logo'
+%nav.navbar.header-nav.navbar-expand-lg.navbar-light.border-top.border-bottom
+  .container-fluid.p-0
+    = link_to root_path, class: 'navbar-brand brand-alt' do
+      = image_tag 'logo.png'
+    .collapse.navbar-collapse.justify-content-between
+      .navbar-nav
+        - if current_user
+          .nav-item
+            = link_to root_path, class: 'nav-link' do
+              = icon('fas', 'home')
+              = 'Dashboard'
+          .nav-item
+            = link_to 'javascript:void(0)', class: 'nav-link' do
+              = icon('fas', 'list')
+              = 'Catalog'
+          .nav-item
+            = link_to 'javascript:void(0)', class: 'nav-link' do
+              = icon('fas', 'file-alt')
+              = 'Reports'
+          .nav-item
+            = link_to 'javascript:void(0)', class: 'nav-link' do
+              = icon('fas', 'dollar-sign')
+              = 'Funding'
+        - else
+          .nav-item
+            = link_to root_path, class: 'nav-link' do
+              = icon('fas', 'home')
+              = 'Home'
+      .navbar-nav
+        .nav-item
+          = link_to 'About', 'https://sparcrequest.atlassian.net/wiki/spaces/RD/overview', class: 'nav-link', target: :blank
+        .nav-item
+          = link_to 'Contact', 'https://sparcrequest.atlassian.net/wiki/spaces/RD/pages/31653983/Contact+Us', class: 'nav-link', target: :blank
+        = render 'layouts/header/news_feed'
+        = render 'layouts/header/google_calendar'
+        = render 'layouts/header/user_profile'

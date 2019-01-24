@@ -1,4 +1,16 @@
 %aside.card.sticky-top#protocolFilters
+  .card-header.bg-white
+    .dropdown.toggle-hover
+      %button.btn.btn-lg.btn-block.btn-success.dropdown-toggle#newProtocolButton{ type: 'button', data: { toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' } }<
+        = icon('fas', 'plus mr-2')
+        = 'Start a New Protocol'
+      .dropdown-menu{ aria: { labelledby: 'newProtocolButton' } }
+        = link_to 'javascript:void(0)', class: 'dropdown-item' do
+          = 'New Research Study'
+          = icon('fas', 'question-circle ml-1 text-info', title: 'A Research Study with defined aims and outcomes', data: { toggle: 'tooltip', placement: 'right' })
+        = link_to 'javascript:void(0)', class: 'dropdown-item' do
+          = 'New Project'
+          = icon('fas', 'question-circle ml-1 text-info', title: 'Non-study-specific service requests or anything that is not a Research Study', data: { toggle: 'tooltip', placement: 'right' })
   %h3.card-header.bg-white.text-center
     = 'Filter Protocols'
   .card-body.pb-0
