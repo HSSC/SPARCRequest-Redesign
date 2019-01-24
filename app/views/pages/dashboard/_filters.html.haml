@@ -7,39 +7,39 @@
       .dropdown-menu{ aria: { labelledby: 'newProtocolButton' } }
         = link_to 'javascript:void(0)', class: 'dropdown-item' do
           = 'New Research Study'
-          = icon('fas', 'question-circle ml-1 text-info', title: 'A Research Study with defined aims and outcomes', data: { toggle: 'tooltip', placement: 'right' })
+          = icon('fas', 'question-circle ml-1 text-primary', title: 'A Research Study with defined aims and outcomes', data: { toggle: 'tooltip', placement: 'right' })
         = link_to 'javascript:void(0)', class: 'dropdown-item' do
           = 'New Project'
-          = icon('fas', 'question-circle ml-1 text-info', title: 'Non-study-specific service requests or anything that is not a Research Study', data: { toggle: 'tooltip', placement: 'right' })
-  %h3.card-header.bg-white.text-center
+          = icon('fas', 'question-circle ml-1 text-primary', title: 'Non-study-specific service requests or anything that is not a Research Study', data: { toggle: 'tooltip', placement: 'right' })
+  %h4.card-header.bg-white.text-center
     = 'Filter Protocols'
   .card-body.pb-0
     %form.form#filterForm
       .form-group
-        = text_field_tag :search, '', class: 'form-control form-control-lg', placeholder: 'Search for a protocol...'
+        = text_field_tag :search, '', class: 'form-control', placeholder: 'Search for a protocol...'
       .form-group
-        = select_tag :status, options_for_select(['Draft', 'Complete', 'Submitted']), title: 'Status', class: 'selectpicker w-100', multiple: true, data: { style: 'btn-lg border rounded' }
+        = select_tag :status, options_for_select(['Draft', 'Complete', 'Submitted']), title: 'Status', class: 'selectpicker w-100', multiple: true, data: { style: 'border rounded' }
       .form-group
-        = select_tag :status, options_for_select(['Org1', 'Org2', 'Org3']), title: 'Organization', class: 'selectpicker w-100', multiple: true, data: { style: 'btn-lg border rounded' }
+        = select_tag :status, options_for_select(['Org1', 'Org2', 'Org3']), title: 'Organization', class: 'selectpicker w-100', multiple: true, data: { style: 'border rounded' }
       .form-group
-        = select_tag :status, options_for_select(['Andrew Cates', 'Leila Forney', 'Wenjun He']), title: 'Owner', class: 'selectpicker w-100', multiple: true, data: { style: 'btn-lg border rounded' }
+        = select_tag :status, options_for_select(['Andrew Cates', 'Leila Forney', 'Wenjun He']), title: 'Owner', class: 'selectpicker w-100', multiple: true, data: { style: 'border rounded' }
       .form-row
         .form-group.col-6
-          = check_box_tag :archived, '', false, data: { toggle: 'toggle', on: 'Archived', off: 'Unarchived', style: 'btn-lg border w-100' }
+          = check_box_tag :archived, '', false, data: { toggle: 'toggle', on: 'Archived', off: 'Unarchived', style: 'border w-100' }
         .form-group.col-6
-          = check_box_tag :admin_protocols, '', false, data: { toggle: 'toggle', on: 'Your   Protocols', off: 'Admin Protocols', style: 'btn-lg border w-100' }
+          = check_box_tag :admin_protocols, '', false, data: { toggle: 'toggle', on: 'Your   Protocols', off: 'Admin Protocols', style: 'border w-100' }
       .form-group
-        = link_to 'Filter', 'javascript:void(0)', class: 'btn btn-lg btn-block btn-primary'
+        = link_to 'Filter', 'javascript:void(0)', class: 'btn btn-block btn-primary'
       .form-row
         .form-group.col-6
-          = link_to 'javascript:void(0)', class: 'btn btn-lg btn-block btn-link' do
+          = link_to 'javascript:void(0)', class: 'btn btn-block btn-link' do
             = icon('far', 'save mr-2')
             = 'Save'
         .form-group.col-6
-          = link_to 'javascript:void(0)', class: 'btn btn-lg btn-block btn-link' do
+          = link_to 'javascript:void(0)', class: 'btn btn-block btn-link' do
             = icon('fas', 'redo mr-2')
             = 'Reset'
-  %h3.card-header.card-footer.bg-white.text-center
+  %h4.card-header.card-footer.bg-white.text-center
     = 'Saved Filters'
   .card-body
     .list-group.list-group-flush#recentFilters

@@ -20,14 +20,10 @@
   height: 100%;
   border-left: 1px solid rgba(0, 0, 0, 0.125);
 
-  .protocol {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .protocol-details {
-      display: flex;
-      align-items: center;
+  #protocolsTable {
+    th {
+      border-top: 0;
+      border-bottom: 0;
     }
   }
 }

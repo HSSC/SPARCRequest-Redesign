@@ -1,53 +1,78 @@
 %main.p-4.bg-light#protocols
   .card
-    %h3.card-header.d-flex.align-items-center.justify-content-between.bg-white
+    %h4.card-header.d-flex.align-items-center.justify-content-between.bg-primary.text-white
       = 'Protocols'
+      = link_to 'Export', 'javascript:void(0)', class: 'btn btn-sm btn-warning'
     .card-body.p-0
-      .list-group.list-group-flush.list-group-striped
-        = link_to 'javascript:void(0)', class: 'list-group-item list-group-item-action protocol' do
-          .protocol-details
-            %span.badge.badge-primary.p-2.mr-3
-              = '11971' 
-            = 'Alcohol Withdrawal Risk Identification'
-          .pi-details
-            = icon('fas', 'user')
-            %span
-              = 'Kevin Mccarthy'
-        = link_to 'javascript:void(0)', class: 'list-group-item list-group-item-action protocol' do
-          .protocol-details
-            %span.badge.badge-primary.p-2.mr-3
-              = '11970' 
-            = 'Dialysis centers outreach'
-          .pi-details
-            = icon('fas', 'user')
-            %span
-              = 'Derek Dubay'
-        = link_to 'javascript:void(0)', class: 'list-group-item list-group-item-action protocol' do
-          .protocol-details
-            %span.badge.badge-primary.p-2.mr-3
-              = '11968' 
-            = 'HOPE Kids 2'
-          .pi-details
-            = icon('fas', 'user')
-            %span
-              = 'Julie Kanter'
-        = link_to 'javascript:void(0)', class: 'list-group-item list-group-item-action protocol' do
-          .protocol-details
-            %span.badge.badge-primary.p-2.mr-3
-              = '11967' 
-            = 'ANCHOR registry'
-          .pi-details
-            = icon('fas', 'user')
-            %span
-              = 'Ravikumar Veeraswamy'
-        = link_to 'javascript:void(0)', class: 'list-group-item list-group-item-action protocol' do
-          .protocol-details
-            %span.badge.badge-primary.p-2.mr-3
-              = '11966' 
-            = 'SCORE submission'
-          .pi-details
-            = icon('fas', 'user')
-            %span
-              = 'Aimee Mcrae-clark'
+      %table.table.table-striped.table-hover.mb-0#protocolsTable
+        %thead
+          %tr
+            %th
+              = render 'shared/sorting'
+              = 'ID'
+            %th
+              = render 'shared/sorting'
+              = 'Short Title'
+            %th
+              = render 'shared/sorting'
+              = 'PI(s)'
+            %th.text-center
+              = 'View Requests'
+        %tbody
+          %tr.protocol
+            %td
+              = link_to '11971', 'javascript:void(0)', class: 'btn btn-sm btn-primary'
+            %td
+              = 'Alcohol Withdrawal Risk Identification'
+            %td
+              = icon('fas', 'user')
+              %span
+                = 'Kevin Mccarthy'
+            %td.text-center
+              = link_to 'Requests', 'javascript:void(0)', class: 'btn btn-sm btn-secondary'
+          %tr.protocol
+            %td
+              = link_to '11970', 'javascript:void(0)', class: 'btn btn-sm btn-primary'
+            %td
+              = 'Dialysis centers outreach'
+            %td
+              = icon('fas', 'user')
+              %span
+                = 'Derek Dubay'
+            %td.text-center
+              = link_to 'Requests', 'javascript:void(0)', class: 'btn btn-sm btn-secondary'
+          %tr.protocol
+            %td
+              = link_to '11968', 'javascript:void(0)', class: 'btn btn-sm btn-primary'
+            %td
+              = 'HOPE Kids 2'
+            %td
+              = icon('fas', 'user')
+              %span
+                = 'Julie Kanter'
+            %td.text-center
+              = link_to 'Requests', 'javascript:void(0)', class: 'btn btn-sm btn-secondary'
+          %tr.protocol
+            %td
+              = link_to '11967', 'javascript:void(0)', class: 'btn btn-sm btn-primary'
+            %td
+              = 'ANCHOR registry'
+            %td
+              = icon('fas', 'user')
+              %span
+                = 'Ravikumar Veeraswamy'
+            %td.text-center
+              = link_to 'Requests', 'javascript:void(0)', class: 'btn btn-sm btn-secondary'
+          %tr.protocol
+            %td
+              = link_to '11966', 'javascript:void(0)', class: 'btn btn-sm btn-primary'
+            %td
+              = 'SCORE submission'
+            %td
+              = icon('fas', 'user')
+              %span
+                = 'Aimee Mcrae-clark'
+            %td.text-center
+              = link_to 'Requests', 'javascript:void(0)', class: 'btn btn-sm btn-secondary'
     .card-footer.bg-white
       = 'Displaying protocols 1-5 of 5 in total'
