@@ -1,5 +1,5 @@
 %header#siteHeader
-  .container-fluid.d-flex.justify-content-between.py-3
+  .container-fluid.d-flex.align-items-center.justify-content-between.py-3
     = link_to root_path, class: 'col-3 p-0' do
       = image_tag 'sparc_request_header.png'
     = link_to 'https://research.musc.edu/resources/sctr', class: 'col-2 p-0', target: :blank do
@@ -36,7 +36,7 @@
         .nav-item
           = link_to 'About', 'https://sparcrequest.atlassian.net/wiki/spaces/RD/overview', class: 'nav-link', target: :blank
         .nav-item
-          = link_to 'Contact', 'https://sparcrequest.atlassian.net/wiki/spaces/RD/pages/31653983/Contact+Us', class: 'nav-link', target: :blank
+          = link_to 'Contact Uu', 'https://sparcrequest.atlassian.net/wiki/spaces/RD/pages/31653983/Contact+Us', class: 'nav-link', target: :blank
         = render 'layouts/header/news_feed'
         = render 'layouts/header/google_calendar'
         = render 'layouts/header/user_profile'
