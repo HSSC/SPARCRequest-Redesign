@@ -12,14 +12,17 @@
           - if current_user
             .navbar-nav
               .nav-item
+                = link_to 'Home', root_path, class: 'nav-link'
+              .nav-item
                 = link_to 'Catalog', 'javascript:void(0)', class: 'nav-link'
               .nav-item
                 = link_to 'Reports', 'javascript:void(0)', class: 'nav-link'
               .nav-item
                 = link_to 'Funding', 'javascript:void(0)', class: 'nav-link'
           .navbar-nav
-            .nav-item
-              = link_to 'Home', root_path, class: 'nav-link'
+            - unless current_user
+              .nav-item
+                = link_to 'Home', root_path, class: 'nav-link'
             .nav-item
               = link_to 'About', 'https://sparcrequest.atlassian.net/wiki/spaces/RD/overview', class: 'nav-link', target: :blank
             .nav-item
