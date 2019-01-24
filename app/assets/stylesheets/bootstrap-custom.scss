@@ -1,4 +1,13 @@
 .dropdown {
+  &.toggle-hover {
+    &:hover {
+      .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+    }
+  }
+
   .dropdown-toggle {
     &:after {
       vertical-align: middle;
@@ -18,7 +27,33 @@
   }
 }
 
-.notification-badge {
+.list-group {
+  &.list-group-flush {
+    .list-group-item {
+      &:first-child {
+        border-top: 0;
+      }
+    }
+  }
+
+  &.list-group-striped {
+    .list-group-item {
+      &:nth-child(2n) {
+        background: theme-color('light');
+      }
+
+      &:hover {
+        background: theme-color-level('light', 1);
+      }
+
+      &.list-group-item-action {
+        color: theme-color('primary');
+      }
+    }
+  }
+}
+
+.badge.notification-badge {
   width: 16px;
   height: 16px;
   left: 36px;
@@ -36,5 +71,13 @@
 .btn.btn-outline-dark {
   &:not(:hover) {
     background: white;
+  }
+}
+
+.toggle {
+  .toggle-on, .toggle-off {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

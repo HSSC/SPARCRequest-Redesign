@@ -1,9 +1,9 @@
 - if current_user
-  .nav-item.dropdown
-    = link_to 'javascript:void(0)', class: 'nav-link dropdown-toggle text-secondary', role: 'button', aria: { haspopup: 'true' } do
+  .nav-item.dropdown.toggle-hover.profile
+    = link_to '#', class: 'nav-link dropdown-toggle dropdown-toggle-hover text-secondary', id: 'profileDropdown', role: 'button', data: { toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' } do
       %span><= icon('fas', 'user-circle fa-lg')
       %span.badge.badge-pill.badge-danger.notification-badge> &nbsp;
-    .dropdown-menu.dropdown-menu-right.mt-0
+    .dropdown-menu.dropdown-menu-right{ aria: { labelledby: 'profileDropdown' } }
       = link_to 'javascript:void(0)', class: 'dropdown-header d-flex text-secondary' do
         = icon('fas', 'user-circle fa-4x mr-4')
         %h5

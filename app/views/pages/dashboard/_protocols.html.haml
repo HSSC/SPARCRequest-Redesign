@@ -1,0 +1,62 @@
+%main.p-4.bg-light#protocols
+  .card
+    %h3.card-header.d-flex.align-items-center.justify-content-between.bg-white
+      = 'Protocols'
+      .dropdown.toggle-hover
+        %button.btn.btn-lg.btn-success.dropdown-toggle#newProtocolButton{ type: 'button', data: { toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' } }<
+          = icon('fas', 'plus mr-2')
+          = 'New Protocol'
+        .dropdown-menu.dropdown-menu-right{ aria: { labelledby: 'newProtocolButton' } }
+          = link_to 'javascript:void(0)', class: 'dropdown-item' do
+            = 'New Study'
+          = link_to 'javascript:void(0)', class: 'dropdown-item' do
+            = 'New Project'
+    .card-body
+      .list-group.list-group-flush.list-group-striped
+        = link_to 'javascript:void(0)', class: 'list-group-item list-group-item-action protocol' do
+          .protocol-details
+            %span.badge.badge-primary.p-2.mr-3
+              = '11971' 
+            = 'Alcohol Withdrawal Risk Identification'
+          .pi-details
+            = icon('fas', 'user')
+            %span
+              = 'Kevin Mccarthy'
+        = link_to 'javascript:void(0)', class: 'list-group-item list-group-item-action protocol' do
+          .protocol-details
+            %span.badge.badge-primary.p-2.mr-3
+              = '11970' 
+            = 'Dialysis centers outreach'
+          .pi-details
+            = icon('fas', 'user')
+            %span
+              = 'Derek Dubay'
+        = link_to 'javascript:void(0)', class: 'list-group-item list-group-item-action protocol' do
+          .protocol-details
+            %span.badge.badge-primary.p-2.mr-3
+              = '11968' 
+            = 'HOPE Kids 2'
+          .pi-details
+            = icon('fas', 'user')
+            %span
+              = 'Julie Kanter'
+        = link_to 'javascript:void(0)', class: 'list-group-item list-group-item-action protocol' do
+          .protocol-details
+            %span.badge.badge-primary.p-2.mr-3
+              = '11967' 
+            = 'ANCHOR registry'
+          .pi-details
+            = icon('fas', 'user')
+            %span
+              = 'Ravikumar Veeraswamy'
+        = link_to 'javascript:void(0)', class: 'list-group-item list-group-item-action protocol' do
+          .protocol-details
+            %span.badge.badge-primary.p-2.mr-3
+              = '11966' 
+            = 'SCORE submission'
+          .pi-details
+            = icon('fas', 'user')
+            %span
+              = 'Aimee Mcrae-clark'
+    .card-footer.bg-white
+      = 'Displaying protocols 1-5 of 5 in total'

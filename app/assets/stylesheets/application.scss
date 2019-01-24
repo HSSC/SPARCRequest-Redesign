@@ -15,6 +15,8 @@
 @import 'bootstrap';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import 'bootstrap-select/dist/css/bootstrap-select.min';
+@import 'bootstrap4-toggle/css/bootstrap4-toggle';
 
 @import 'bootstrap-custom';
 @import 'utilities';
@@ -26,3 +28,4 @@
 @import 'google-calendar';
 
 @import 'home';
+@import 'dashboard';

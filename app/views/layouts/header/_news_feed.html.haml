@@ -1,6 +1,6 @@
-.nav-item.dropdown.news
-  = link_to 'News', 'javascript:void(0)', class: 'nav-link dropdown-toggle', role: 'button', aria: { haspopup: 'true' }
-  .dropdown-menu.dropdown-menu-right.mt-0
+.nav-item.dropdown.toggle-hover.news
+  = link_to 'News', '#', class: 'nav-link dropdown-toggle', id: 'newsDropdown', role: 'button', data: { toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' }
+  .dropdown-menu.dropdown-menu-right{ aria: { labelledby: 'newsDropdown' } }
     = link_to 'https://sparcrequest.atlassian.net/wiki/spaces/MIB/blog/2019/01/08/231801058/2019+SCTR+KL2+Multidisciplinary+Scholars+Program+Open+to+Application', class: 'dropdown-item post text-primary', target: :blank do
       %h5.post-title.col-12.p-0
         = '2019 SCTR KL2 Multidisciplinary Scholars Program Open to Application'

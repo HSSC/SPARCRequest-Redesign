@@ -1,5 +1,8 @@
 {
   "name": "sparc-request-redesign",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap-select": "^1.13.5",
+    "bootstrap4-toggle": "^3.4.0"
+  }
 }

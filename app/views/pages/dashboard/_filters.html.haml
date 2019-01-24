@@ -1,0 +1,45 @@
+%aside.card.sticky-top#protocolFilters
+  %h3.card-header.bg-white.text-center
+    = 'Filter Protocols'
+  .card-body.pb-0
+    %form.form#filterForm
+      .form-group
+        = text_field_tag :search, '', class: 'form-control form-control-lg', placeholder: 'Search for a protocol...'
+      .form-group
+        = select_tag :status, options_for_select(['Draft', 'Complete', 'Submitted']), title: 'Status', class: 'selectpicker w-100', multiple: true, data: { style: 'btn-lg border rounded' }
+      .form-group
+        = select_tag :status, options_for_select(['Org1', 'Org2', 'Org3']), title: 'Organization', class: 'selectpicker w-100', multiple: true, data: { style: 'btn-lg border rounded' }
+      .form-group
+        = select_tag :status, options_for_select(['Andrew Cates', 'Leila Forney', 'Wenjun He']), title: 'Owner', class: 'selectpicker w-100', multiple: true, data: { style: 'btn-lg border rounded' }
+      .form-row
+        .form-group.col-6
+          = check_box_tag :archived, '', false, data: { toggle: 'toggle', on: 'Archived', off: 'Unarchived', style: 'btn-lg border w-100' }
+        .form-group.col-6
+          = check_box_tag :admin_protocols, '', false, data: { toggle: 'toggle', on: 'Your   Protocols', off: 'Admin Protocols', style: 'btn-lg border w-100' }
+      .form-group
+        = link_to 'Filter', 'javascript:void(0)', class: 'btn btn-lg btn-block btn-primary'
+      .form-row
+        .form-group.col-6
+          = link_to 'javascript:void(0)', class: 'btn btn-lg btn-block btn-link' do
+            = icon('far', 'save mr-2')
+            = 'Save'
+        .form-group.col-6
+          = link_to 'javascript:void(0)', class: 'btn btn-lg btn-block btn-link' do
+            = icon('fas', 'redo mr-2')
+            = 'Reset'
+  %h3.card-header.card-footer.bg-white.text-center
+    = 'Saved Filters'
+  .card-body
+    .list-group.list-group-flush#recentFilters
+      .list-group-item
+        = link_to 'Test Filter', 'javascript:void(0)', title: 'Apply Filter'
+        = link_to 'javascript:void(0)', class: 'text-danger float-right' do
+          = icon('fas', 'times')
+      .list-group-item
+        = link_to 'Filterrific', 'javascript:void(0)', title: 'Apply Filter'
+        = link_to 'javascript:void(0)', class: 'text-danger float-right' do
+          = icon('fas', 'times')
+      .list-group-item
+        = link_to 'Unfiltered', 'javascript:void(0)', title: 'Apply Filter'
+        = link_to 'javascript:void(0)', class: 'text-danger float-right' do
+          = icon('fas', 'times')

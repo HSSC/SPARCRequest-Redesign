@@ -1,13 +1,13 @@
-.nav-item.dropdown.events
-  = link_to 'Calendar', 'javascript:void(0)', class: 'nav-link dropdown-toggle', role: 'button', aria: { haspopup: 'true' }
-  .dropdown-menu.dropdown-menu-right.mt-0
+.nav-item.dropdown.toggle-hover.events
+  = link_to 'Calendar', '#', class: 'nav-link dropdown-toggle', id: 'calendarDropdown', role: 'button', data: { toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' }
+  .dropdown-menu.dropdown-menu-right{ aria: { labelledby: 'calendarDropdown' } }
     = link_to 'javascript:void(0)', class: 'dropdown-item event text-primary', title: 'Learn More' do
       .event-details
         %h5.event-title.col-12.p-0
           = 'SPARC OS Governance: Operations and Logistics Call'
         %p.event-time
           = '11:00 AM - 12:00 PM'
-      %small.card.event-date.ml-4x
+      %small.card.event-date.ml-4
         = 'Jan'
         %br
         = '18'
@@ -18,7 +18,7 @@
           = 'SPARC Ontology Subcommittee'
         %p.event-time
           = '2:00 PM - 3:00 PM'
-      %small.card.event-date.ml-4x
+      %small.card.event-date.ml-4
         = 'Jan'
         %br
         = '18'
@@ -29,7 +29,7 @@
           = 'SPARC OS Developer Status Call'
         %p.event-time
           = '3:00 PM - 3:30 PM - Online'
-      %small.card.event-date.ml-4x
+      %small.card.event-date.ml-4
         = 'Jan'
         %br
         = '23'

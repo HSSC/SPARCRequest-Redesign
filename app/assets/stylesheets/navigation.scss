@@ -25,8 +25,6 @@ nav.navbar {
 }
 
 .header-nav {
-  border-bottom: 1px solid $gray-300;
-
   .navbar-brand {
     display: flex;
     justify-content: flex-end;
@@ -51,14 +49,6 @@ nav.navbar {
       .nav-item {
         display: flex;
         align-items: center;
-
-        &.dropdown {
-          &:hover {
-            .dropdown-menu {
-              display: block;
-            }
-          }
-        }
 
         .nav-link {
           &:not(.dropdown-toggle) {
@@ -88,8 +78,6 @@ nav.navbar {
 }
 
 footer {
-  border-top: 1px solid $gray-300;
-
   .footer-nav {
     .container {
       align-items: stretch;

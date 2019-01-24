@@ -1,3 +1,12 @@
+body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#siteHeader, #siteFooter {
+  width: 100%;
+}
+
 section, footer {
   .container {
     height: 100%;
