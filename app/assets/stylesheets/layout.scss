@@ -1,6 +1,13 @@
 body {
   display: flex;
   flex-wrap: wrap;
+
+  #contents {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
 }
 
 #siteHeader, #siteFooter {

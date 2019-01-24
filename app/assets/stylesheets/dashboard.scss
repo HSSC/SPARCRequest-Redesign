@@ -1,15 +1,18 @@
 #protocolFilters {
-  border-radius: 0;
-  border-top: 0;
-  border-bottom: 0;
-  border-left: 0;
+  border: 0;
   flex: 0 0 20%;
   max-width: 20%;
+
+  .card-body {
+    flex: 0;
+  }
 }
 
 #protocols {
   flex: 0 0 80%;
   max-width: 80%;
+  height: 100%;
+  border-left: 1px solid rgba(0, 0, 0, 0.125);
 
   .protocol {
     display: flex;
