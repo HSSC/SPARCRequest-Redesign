@@ -1,24 +1,26 @@
-# README
+# SPARCRequest Redesign Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The goal of this project is to develop a new look for [SPARCRequest](https://sparc.musc.edu) using the Bootstrap 4 CSS framework.
 
-Things you may want to cover:
+# Installation
 
-* Ruby version
+```
+# Clone the Repository
+git clone https://github.com/HSSC/SPARCRequest-Redesign.git
+cd sparc-request-redesign
 
-* System dependencies
+# Install Bundler and Gems
+gem install bundler
+bundle install
 
-* Configuration
+# Install Yarn and Yarn Dependencies
+brew install yarn
+yarn install
 
-* Database creation
+# Create and Migrate Database
+rake db:create
+rake db:migrate
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Run the Server
+rails s
+```
