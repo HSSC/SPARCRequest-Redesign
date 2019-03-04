@@ -9,5 +9,5 @@
   %body
     = render 'layouts/header'
     #contents
-      = yield
+      = content_for?(:content) ? yield(:content) : yield
     = render 'layouts/footer'

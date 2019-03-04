@@ -1,6 +1,13 @@
 body {
+  opacity: 0;
   display: flex;
   flex-wrap: wrap;
+
+  transition: opacity 0.5s ease-in-out;
+
+  &.active {
+    opacity: 1;
+  }
 
   #contents {
     width: 100%;
@@ -10,12 +17,16 @@ body {
   }
 }
 
-#siteHeader, .header-nav, section, #siteFooter {
+#siteHeader,
+.header-nav,
+.steps-nav,
+section,
+#siteFooter {
   width: 100%;
 }
 
 section, footer {
-  .container {
+  .container, .container-fluid {
     height: 100%;
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -30,6 +41,9 @@ img {
 
 a {
   transition: 0.15s ease-in-out;
+}
+
+a, .btn-link {
   text-decoration: none !important;
   outline: none !important;
 }

@@ -1,9 +1,9 @@
-class PagesController < ApplicationController
+class BaseController < ApplicationController
   def home
     respond_to :html
   end
 
-  def dashobard
+  def dashboard
     respond_to :html
   end
 end

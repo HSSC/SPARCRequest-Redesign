@@ -1,15 +1,4 @@
-%section
-  .banner-container
-    = image_tag 'PAMR banner.jpg', class: 'banner home-banner'
-    .banner-overlay
-    .container
-      %p.banner-caption.col-10.offset-1.text-center.align-self-center
-        %strong.text-lg
-          = "SPARC (Services, Pricing, and Applications for Research Center) "
-        = "is a web-based research management system that integrates research and clinical care workflows with a focus on service request catalog, billing compliance, proposal and budget development, work fulfillment data collection, invoicing and billing, and impact data through grants and publication associations."
-      .col-10.offset-1.text-center
-        = link_to 'Get Started', new_user_session_path, class: 'btn btn-lg btn-primary'
-%section
+%section.bg-light
   .container
     %h1.text-warning.text-center.col-12.mb-5.font-weight-light
       = 'The SPARCRequest Process'
@@ -23,5 +12,3 @@
       %iframe{ width: 540, height: 303, src: 'https://www.youtube.com/embed/gb1_vm7M7nI', frameborder: '0', allow: 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen: true}
     .col-12.d-flex.justify-content-center.mt-5
       = link_to 'Learn More', 'javascript:void(0)', class: 'btn btn-lg btn-primary'
-= render 'pages/home/news_feed'
-= render 'pages/home/google_calendar'

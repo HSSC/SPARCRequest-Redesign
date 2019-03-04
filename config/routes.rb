@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resource :page, only: [] do
+  resource :base, only: [] do
     get :home
     get :dashboard
   end
 
-  authenticated :user do
-    root 'pages#dashboard'
+  resource :protocol, only: [] do
+    get :details
   end
 
-  root 'pages#home'
+  authenticated :user do
+    root 'base#dashboard'
+  end
+
+  root 'base#home'
 end

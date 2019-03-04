@@ -43,9 +43,14 @@
       .event {
         display: flex;
         justify-content: flex-end;
+        border-right: 4px solid transparent;
 
         &:not(:last-child) {
           margin-bottom: 1rem;
+        }
+
+        &:hover {
+          border-right: 4px solid theme-color('primary');
         }
 
         .event-date {

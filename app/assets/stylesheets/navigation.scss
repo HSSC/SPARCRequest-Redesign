@@ -5,22 +5,10 @@ nav.navbar {
     padding: 0;
   }
 
-  .navbar-nav {
-    .nav-item {
-      .nav-link {
-        padding: 0 1rem;
-        font-size: 1.5rem;
-        font-weight: 300;
-
-        &:first-child {
-          color: theme-color('primary');
-
-          &:hover {
-            color: theme-color-level('primary', 5rem);
-          }
-        }
-      }
-    }
+  .navbar-brand, .navbar-nav .nav-link {
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    font-weight: 300;
   }
 }
 
@@ -44,10 +32,18 @@ nav.navbar {
       align-items: center;
 
       .nav-link {
-        &:not(.dropdown-toggle) {
+        &:first-child {
+          color: theme-color('light') !important;
+
+          &:hover {
+            color: theme-color-level('primary', 5rem);
+          }
+        }
+
+        &:not(.dropdown-toggl) {
           position: relative;
 
-          &:after {
+          &:before {
             content: '';
             position: absolute;
             width: 0;
@@ -59,11 +55,21 @@ nav.navbar {
           }
 
           &:hover {
-            &:after {
+            &:before {
               width: calc(100% - 2rem);
             }
           }
         }
+      }
+    }
+  }
+
+  .dropdown {
+    .dropdown-menu {
+      .dropdown-item {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
       }
     }
   }

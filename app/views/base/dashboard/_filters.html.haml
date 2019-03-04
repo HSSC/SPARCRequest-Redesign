@@ -5,10 +5,10 @@
         = icon('fas', 'plus mr-2')
         = 'Start a New Protocol'
       .dropdown-menu{ aria: { labelledby: 'newProtocolButton' } }
-        = link_to 'javascript:void(0)', class: 'dropdown-item' do
+        = link_to details_protocol_path(type: 'Study'), class: 'dropdown-item' do
           = 'New Research Study'
           = icon('fas', 'question-circle ml-1 text-primary', title: 'A Research Study with defined aims and outcomes', data: { toggle: 'tooltip', placement: 'right' })
-        = link_to 'javascript:void(0)', class: 'dropdown-item' do
+        = link_to details_protocol_path(type: 'Project'), class: 'dropdown-item' do
           = 'New Project'
           = icon('fas', 'question-circle ml-1 text-primary', title: 'Non-study-specific service requests or anything that is not a Research Study', data: { toggle: 'tooltip', placement: 'right' })
   %h4.card-header.bg-white.text-center
@@ -18,16 +18,16 @@
       .form-group
         = text_field_tag :search, '', class: 'form-control', placeholder: 'Search for a protocol...'
       .form-group
-        = select_tag :status, options_for_select(['Draft', 'Complete', 'Submitted']), title: 'Status', class: 'selectpicker w-100', multiple: true, data: { style: 'border rounded' }
+        = select_tag :status, options_for_select(['Draft', 'Complete', 'Submitted']), title: 'Status', class: 'selectpicker', multiple: true
       .form-group
-        = select_tag :status, options_for_select(['Org1', 'Org2', 'Org3']), title: 'Organization', class: 'selectpicker w-100', multiple: true, data: { style: 'border rounded' }
+        = select_tag :status, options_for_select(['Org1', 'Org2', 'Org3']), title: 'Organization', class: 'selectpicker', multiple: true
       .form-group
-        = select_tag :status, options_for_select(['Andrew Cates', 'Leila Forney', 'Wenjun He']), title: 'Owner', class: 'selectpicker w-100', multiple: true, data: { style: 'border rounded' }
+        = select_tag :status, options_for_select(['Andrew Cates', 'Leila Forney', 'Wenjun He']), title: 'Owner', class: 'selectpicker', multiple: true
       .form-row
         .form-group.col-6
-          = check_box_tag :archived, '', false, data: { toggle: 'toggle', on: 'Archived', off: 'Unarchived', style: 'border w-100' }
+          = check_box_tag :archived, true, false, data: { toggle: 'toggle', on: 'Archived', off: 'Unarchived' }
         .form-group.col-6
-          = check_box_tag :admin_protocols, '', false, data: { toggle: 'toggle', on: 'Your   Protocols', off: 'Admin Protocols', style: 'border w-100' }
+          = check_box_tag :admin_protocols, true, false, data: { toggle: 'toggle', on: 'Your   Protocols', off: 'Admin Protocols' }
       .form-group
         = link_to 'Filter', 'javascript:void(0)', class: 'btn btn-block btn-primary'
       .form-row

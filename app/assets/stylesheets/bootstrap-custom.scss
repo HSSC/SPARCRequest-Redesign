@@ -19,12 +19,9 @@
 
   .dropdown-menu {
     .dropdown-item {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-
       &:active {
         background: $gray-200;
+        color: black;
       }
     }
   }
@@ -70,14 +67,6 @@
   }
 }
 
-.toggle {
-  .toggle-on, .toggle-off {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
 .table {
   &.table-hover {
     tbody {
@@ -110,5 +99,56 @@
         color: theme-color('primary');
       }
     }
+  }
+}
+
+.popover {
+  @each $color, $value in $theme-colors {
+    &.popover-#{$color} {
+      @extend .border-#{$color};
+
+      .popover-header {
+        @extend .bg-#{$color};
+        @extend .text-white;
+      }
+
+      @each $direction in ('top', 'bottom', 'left', 'right') {
+        &.bs-popover-#{$direction} {
+          .arrow {
+            &:before {
+              border-#{$direction}-color: theme-color($color);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Bootstrap-Toggle Styling */
+.toggle {
+  border: 1px solid #ced4da;
+
+  &:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 100% !important;
+  }
+
+  .toggle-on, .toggle-off {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Bootstrap-Select Styling */
+.bootstrap-select {
+  &:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 100%;
+  }
+
+  button {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    background: white;
   }
 }

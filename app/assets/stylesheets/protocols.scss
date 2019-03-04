@@ -1,0 +1,82 @@
+nav.navbar {
+  &.steps-nav, &.substeps-nav {
+    .navbar-nav {
+      i {
+        color: theme-color-level('light', 2);
+      }
+
+      .nav-link {
+        color: theme-color-level('secondary', -2);
+
+        &.active {
+          position: relative;
+          color: theme-color('primary');
+
+          &:hover {
+            color: theme-color-level('primary', 2);
+          }
+
+          &:after {
+            content: "";
+            height: 4px;
+            bottom: 0;
+            position: absolute;
+            background: theme-color('primary');
+          }
+        }
+
+        &:hover {
+          color: black;
+        }
+      }
+    }
+  }
+
+  &.steps-nav {
+    .navbar-nav {
+      .nav-link {
+        padding: 1rem 1.5rem;
+
+        &.active {
+          font-weight: 500;
+        }
+
+        &:after {
+          left: 1.5rem;
+          right: 1.5rem;
+        }
+      }
+
+    }
+  }
+
+  &.substeps-nav {
+    .navbar-nav {
+      .nav-link {
+        padding: 0.5rem 1rem;
+
+        &:after {
+          left: 1rem;
+          right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.substep {
+  padding: 1.25rem;
+  transition: height 0s, visibility 0s, opacity 0.5s ease-in-out;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &:not(.active) {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    padding: 0;
+  }
+}

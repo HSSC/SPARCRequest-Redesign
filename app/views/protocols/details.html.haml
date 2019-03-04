@@ -1,0 +1,9 @@
+.card.col-8.offset-2.p-0
+  %form.form
+    .card-body
+      = render 'protocols/details/navbar', type: @type
+      = render 'protocols/details/protocol_information', type: @type
+      = render 'protocols/details/financial_information', type: @type
+
+:javascript
+  setActiveSubStep()

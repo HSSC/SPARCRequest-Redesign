@@ -1,0 +1,38 @@
+%section
+  .container-fluid
+    %h1.text-warning.text-center.col-12.mb-5.font-weight-light
+      = "Browse Our Service Catalog"
+    .col-6.offset-1#serviceCatalogAccordion
+      - klasses = ['primary', 'success', 'warning', 'danger', 'info']
+      - {'Medical University of South Carolina' => { 'CEDAR: Comparative Effectiveness and Data Analytics Research Resource' => {}, 'Center for Genomics Medicine' => {}, 'ClinCard by Greenphire' => {}, 'Cores & Facilities' => {}, 'Laboratory Services' => {}, 'Media Training for Researchers' => {}, 'National Center of Neuromodulation for Rehabilitation (NC NM4R)' => {}, 'Office of Clinical Research (OCR)' => {}, 'Office of Research Integrity' => {}, 'South Carolina Clinical and Translational Research Institute (SCTR)' => {}, 'Study Team Assessments' => {}}, 'MUHA-Medical University Hospital Authority' => {}, 'MUSCP-Medical University of South Carolina Physicians' => {}}.each_with_index do |orgs, id|
+        - klass = klasses[id % 5]
+        .card.mb-1{ class: "border-#{klass}" }
+          .card-header.py-2.px-3{ id: "organization#{id}", class: "bg-#{klass}" }
+            %h5.mb-0{ title: orgs[0], data: { toggle: 'popover', trigger: 'hover', content: 'This is where the organization description goes.', class: klass } }
+              %button.btn.btn-link.d-flex.justify-content-between.align-items-center.w-100.p-0.text-left.text-white{ data: { toggle: 'collapse', target: "#collapse#{id}" }, aria: { expanded: 'true', controls: "collapse#{id}" } }<
+                = orgs[0]
+                = icon('fas', 'caret-down ml-3')
+          .collapse{ id: "collapse#{id}", data: { parent: '#serviceCatalogAccordion' }, aria: { labelledby: "organization#{id}" } }
+            .card-body
+              - orgs[1].each_with_index do |orgs, id2|
+                - klass = klasses[id2 % 5]
+                .card.mb-1{ class: "border-#{klass}" }
+                  .card-header.py-2.px-3{ id: "organization#{id}#{id2}", class: "bg-#{klass}" }
+                    %h5.mb-0{ title: orgs[0], data: { toggle: 'popover', trigger: 'hover', content: 'This is where the organization description goes.', class: klass } }
+                      %button.btn.btn-link.d-flex.justify-content-between.align-items-center.w-100.p-0.text-left.text-white{ data: { toggle: 'collapse', target: "#collapse#{id}#{id2}" }, aria: { expanded: 'true', controls: "collapse#{id}#{id2}" } }<
+                        = orgs[0]
+                        = icon('fas', 'caret-down ml-3')
+                  .collapse{ id: "collapse#{id}#{id2}", data: { parent: "#collapse#{id}" }, aria: { labelledby: "#organization#{id}#{id2}" } }
+                    .card-body
+    .col-3.offset-1#tableauEmbed
+      %script{ type: 'text/javascript', src: 'https://anyl-tableau-v.mdc.musc.edu/javascripts/api/viz_v1.js' }
+      .tableauPlaceholder{ style: 'width: 472.5px; height: 472.5px' }
+        %object.tableauViz{ width: '472.5', height: '472.5', style: 'display:none;' }
+          %param{ name: 'host_url', value: 'https' + "%3A%2F%2F" + 'anyl-tableau-v.mdc.musc.edu' + "%2F" }
+          %param{ name: 'embed_code_version', value: '3' }
+          %param{ name: 'site_root', value: '' }
+          %param{ name: 'name', value: 'InstitutionalDashboard/RadialTreeDashboard' }
+          %param{ name: 'tabs', value: 'no' }
+          %param{ name: 'toolbar', value: 'no' }
+          %param{ name: 'showAppBanner', value: 'false' }
+          %param{ name: 'filter', value:'iframeSizedToWindow=true' }

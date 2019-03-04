@@ -27,8 +27,14 @@
       padding-bottom: 3rem;
 
       .post {
+        border-left: 4px solid transparent;
+
         &:not(:last-child) {
           margin-bottom: 1rem;
+        }
+
+        &:hover {
+          border-left: 4px solid theme-color('primary');
         }
       }
     }

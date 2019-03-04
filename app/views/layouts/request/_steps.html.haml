@@ -1,0 +1,24 @@
+%nav.navbar.steps-nav.navbar-expand-lg.navbar-light.border-bottom.p-0
+  .container-fluid.justify-content-center
+    .navbar-nav.align-items-center
+      .nav-item
+        -# In reality we need to check if the protocol exists or not - #new vs #show
+        = link_to "#{type} Details", details_protocol_path(type: type), class: ['nav-link', action_name == 'details' ? 'active' : '']
+      = icon('fas', 'chevron-right fa-2x')
+      .nav-item
+        = link_to 'Authorized Users', 'javascript:void(0)', class: 'nav-link'
+      = icon('fas', 'chevron-right fa-2x')
+      .nav-item
+        = link_to 'Services', 'javascript:void(0)', class: 'nav-link'
+      = icon('fas', 'chevron-right fa-2x')
+      .nav-item
+        = link_to 'Calendar', 'javascript:void(0)', class: 'nav-link'
+      = icon('fas', 'chevron-right fa-2x')
+      .nav-item
+        = link_to 'Documents', 'javascript:void(0)', class: 'nav-link'
+      = icon('fas', 'chevron-right fa-2x')
+      .nav-item
+        = link_to 'Review', 'javascript:void(0)', class: 'nav-link'
+      = icon('fas', 'chevron-right fa-2x')
+      .nav-item
+        = link_to 'Submit', 'javascript:void(0)', class: 'nav-link'
