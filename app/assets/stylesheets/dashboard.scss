@@ -1,13 +1,22 @@
-#protocolFilters {
-  border: 0;
-  flex: 0 0 20%;
-  max-width: 20%;
+.sub-header-nav {
+  .new-protocol {
+    flex: 0 0 20%;
 
-  #newProtocolButton {
-    &:after {
-      display: none;
+    #newProtocolButton {
+      &:after {
+        display: none;
+      }
+    }
+
+    .dropdown-menu {
+      z-index: 2000;
     }
   }
+}
+
+#protocolFilters {
+  flex: 0 0 20%;
+  max-width: 20%;
 
   .card-body {
     flex: 0;
@@ -18,7 +27,6 @@
   flex: 0 0 80%;
   max-width: 80%;
   height: 100%;
-  border-left: 1px solid rgba(0, 0, 0, 0.125);
 
   #protocolsTable {
     th {

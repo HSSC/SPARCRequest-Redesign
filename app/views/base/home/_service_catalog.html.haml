@@ -3,11 +3,16 @@
     %h1.text-warning.text-center.col-12.mb-5.font-weight-light
       = "Browse Our Service Catalog"
     .col-6.offset-1#serviceCatalogAccordion
+      .input-group.mb-3
+        %input.form-control.form-control-lg{ type: 'text', placeholder: "Search for services..." }
+        .input-group-append
+          %span.input-group-text
+            = icon('fas', 'search fa-lg')
       - klasses = ['primary', 'success', 'warning', 'danger', 'info']
       - {'Medical University of South Carolina' => { 'CEDAR: Comparative Effectiveness and Data Analytics Research Resource' => {}, 'Center for Genomics Medicine' => {}, 'ClinCard by Greenphire' => {}, 'Cores & Facilities' => {}, 'Laboratory Services' => {}, 'Media Training for Researchers' => {}, 'National Center of Neuromodulation for Rehabilitation (NC NM4R)' => {}, 'Office of Clinical Research (OCR)' => {}, 'Office of Research Integrity' => {}, 'South Carolina Clinical and Translational Research Institute (SCTR)' => {}, 'Study Team Assessments' => {}}, 'MUHA-Medical University Hospital Authority' => {}, 'MUSCP-Medical University of South Carolina Physicians' => {}}.each_with_index do |orgs, id|
         - klass = klasses[id % 5]
         .card.mb-1{ class: "border-#{klass}" }
-          .card-header.py-2.px-3{ id: "organization#{id}", class: "bg-#{klass}" }
+          .card-header{ id: "organization#{id}", class: "bg-#{klass}" }
             %h5.mb-0{ title: orgs[0], data: { toggle: 'popover', trigger: 'hover', content: 'This is where the organization description goes.', class: klass } }
               %button.btn.btn-link.d-flex.justify-content-between.align-items-center.w-100.p-0.text-left.text-white{ data: { toggle: 'collapse', target: "#collapse#{id}" }, aria: { expanded: 'true', controls: "collapse#{id}" } }<
                 = orgs[0]

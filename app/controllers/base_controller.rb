@@ -3,7 +3,7 @@ class BaseController < ApplicationController
     respond_to :html
   end
 
-  def dashboard
+  def contributions
     respond_to :html
   end
 end

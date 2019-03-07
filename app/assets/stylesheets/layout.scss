@@ -17,15 +17,14 @@ body {
   }
 }
 
-#siteHeader,
-.header-nav,
-.steps-nav,
-section,
+#siteHeader, .header-nav,
+.sub-header-nav, .steps-nav,
+main, section,
 #siteFooter {
   width: 100%;
 }
 
-section, footer {
+main, section, footer {
   .container, .container-fluid {
     height: 100%;
     padding-top: 3rem;

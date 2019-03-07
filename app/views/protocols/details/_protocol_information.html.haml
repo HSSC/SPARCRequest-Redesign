@@ -1,7 +1,9 @@
-.substep#studyInformationSection
-  %h4.text-primary.mb-4.col-9.p-0
-    = "Start by filling out some basic information about so that we can determine the appropriate pricing for your #{type}."
-  = render 'shared/required_fields_notice'
+.substep#protocolInformationSection
+  .form-group.mb-4
+    %h4.text-primary
+      = "Start by filling out some basic information so that we can determine the appropriate pricing for your #{type}."
+  .form-group.mb-4
+    = render 'shared/required_fields_notice'
   - if type == 'Study'
     .form-row.mt-4.mb-5
       %h5.col-12
@@ -19,7 +21,7 @@
   - if type == 'Project'
     .form-group
       = label_tag :description
-      = text_area_tag :description, class: 'form-control'
+      = text_area_tag :description, '', class: 'form-control'
   .form-row
     .form-group.col-3
       = label_tag :funding_status, 'Funding Status', class: 'required'
@@ -45,7 +47,14 @@
   .form-group
     = label_tag :sponsor_name, 'Sponsor Name', class: 'required'
     = text_field_tag :sponsor_name, '', class: 'form-control'
-  .form-row
+  .form-row.m-0
     .form-group.col-2
       = label_tag :selected_for_epic, 'Publish Study in Epic', class: 'required'
       = check_box_tag :selected_for_epic, true, false, data: { toggle: 'toggle', on: 'Yes', off: 'No', style: 'col-6' }
+  .form-group.border-top.mt-4.mb-0.pt-4<>
+    = link_to protocols_path, class: 'btn btn-lg btn-outline-primary' do
+      = icon('fas', 'arrow-left mr-2')
+      = 'Dashboard'
+    %button.btn.btn-lg.btn-outline-primary.float-right.validate{ type: 'button', data: { group: 'protocolInformation', href: 'Study' ? '#financialInformation' : '#authorizedUsers'} }<
+      = 'Continue'
+      = icon('fas', 'arrow-right ml-2')

@@ -125,6 +125,10 @@
   }
 }
 
+.tooltip {
+  z-index: 10000;
+}
+
 /* Bootstrap-Toggle Styling */
 .toggle {
   border: 1px solid #ced4da;

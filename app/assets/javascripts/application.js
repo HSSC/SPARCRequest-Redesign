@@ -18,5 +18,7 @@
 //= require bootstrap-select/dist/js/bootstrap-select.min
 //= require bootstrap4-toggle/js/bootstrap4-toggle
 //= require bootstrap-datepicker/dist/js/bootstrap-datepicker.min
+//= require nprogress
+//= require nprogress-ajax
 
 //= require_tree .

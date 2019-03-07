@@ -1,0 +1,16 @@
+%main.bg-light.devise-page
+  .container
+    .card.col-6.offset-3
+      .card-body
+        %h2.card-title
+          = 'Sign in'
+        = form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+          .form-group
+            = f.text_field :email, autofocus: true, class: 'form-control', placeholder: 'Email'
+          .form-group
+            = f.password_field :password, autocomplete: 'off', class: 'form-control', placeholder: 'Password'
+          - if devise_mapping.rememberable?
+            .form-group.form-check
+              = f.check_box :remember_me, class: 'form-check-input'
+              = f.label :remember_me, 'Remember Me', class: 'form-check-label'
+          = f.submit 'Submit', class: 'btn btn-lg btn-block btn-primary'

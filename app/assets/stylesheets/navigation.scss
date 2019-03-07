@@ -10,72 +10,74 @@ nav.navbar {
     font-size: 1.5rem;
     font-weight: 300;
   }
-}
 
-.header-nav {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  &.header-nav {
+    padding-left: .5rem;
+    padding-right: .5rem;
 
-  .navbar-brand {
-    display: flex;
-    justify-content: flex-end;
-
-    &.brand-alt {
-      width: 48px;
-      display: none;
-    }
-  }
-
-  .navbar-nav {
-    .nav-item {
+    .navbar-brand {
       display: flex;
-      align-items: center;
+      justify-content: flex-end;
 
-      .nav-link {
-        &:first-child {
-          color: theme-color('light') !important;
+      &.brand-alt {
+        width: 48px;
+        display: none;
+      }
+    }
 
-          &:hover {
-            color: theme-color-level('primary', 5rem);
-          }
-        }
+    .navbar-nav {
+      .nav-item {
+        display: flex;
+        align-items: center;
 
-        &:not(.dropdown-toggl) {
-          position: relative;
+        .nav-link {
+          &:first-child {
+            color: theme-color('light') !important;
 
-          &:before {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 4px;
-            bottom: 0;
-            left: 1rem;
-            background: theme-color('warning');
-            transition: all 0.25s ease-in-out;
+            &:hover {
+              color: theme-color-level('primary', 5rem);
+            }
           }
 
-          &:hover {
+          &:not(.dropdown-toggl) {
+            position: relative;
+
             &:before {
-              width: calc(100% - 2rem);
+              content: '';
+              position: absolute;
+              width: 0;
+              height: 4px;
+              bottom: 0;
+              left: 1rem;
+              background: theme-color('warning');
+              transition: all 0.25s ease-in-out;
+            }
+
+            &:hover {
+              &:before {
+                width: calc(100% - 2rem);
+              }
             }
           }
         }
       }
     }
-  }
 
-  .dropdown {
-    .dropdown-menu {
-      .dropdown-item {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
+    .dropdown {
+      .dropdown-menu {
+        .dropdown-item {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+        }
       }
     }
   }
 }
 
 footer {
+  background: theme-color-level('light', 1);
+
   .footer-nav {
     .container {
       align-items: stretch;
@@ -90,7 +92,6 @@ footer {
       }
 
       .navbar-nav {
-        padding-right: 25px;
         flex-flow: row;
         justify-content: center;
 

@@ -3,16 +3,26 @@ Rails.application.routes.draw do
 
   resource :base, only: [] do
     get :home
-    get :dashboard
+  end
+
+  resources :epic_queues, only: [:index] do
+  end
+
+  resources :protocols, only: [:index, :show] do
   end
 
   resource :protocol, only: [] do
+    get :validate
     get :details
   end
 
-  authenticated :user do
-    root 'base#dashboard'
+  resources :settings, only: [:index] do
   end
+
+  resources :users, only: [:show, :edite] do
+  end
+
+  match '/dashboard' => 'protocols#index', via: [:get]
 
   root 'base#home'
 end

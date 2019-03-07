@@ -1,0 +1,5 @@
+- content_for :content do
+  = render 'layouts/dashboard/sub_header'
+  .container-fluid.d-flex.bg-light.p-4
+    = yield
+= render template: 'layouts/application'

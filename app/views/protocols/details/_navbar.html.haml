@@ -1,11 +1,13 @@
 %nav.navbar.substeps-nav.navbar-expand-lg
-  .container.justify-content-center
+  .container.justify-content-center.border-bottom
     .navbar-nav
       .nav-item
-        = link_to "#{type} Information", '#studyInformation', class: 'nav-link substep-link', id: 'studyInformation'
+        = link_to "#{type} Information", '#protocolInformation', class: 'nav-link substep-link', id: 'protocolInformation'
       .nav-item
         = link_to "Financial Information", '#financialInformation', class: 'nav-link substep-link', id: 'financialInformation'
       .nav-item
         = link_to "Involvements", '#researchInvolving', class: 'nav-link substep-link', id: 'researchInvolving'
       .nav-item
         = link_to "Impact Areas", '#impactAreas', class: 'nav-link substep-link', id: 'impactAreas'
+      .nav-item
+        = link_to "Authorized Users", '#authorizedUsers', class: 'nav-link substep-link', id: 'authorizedUsers'

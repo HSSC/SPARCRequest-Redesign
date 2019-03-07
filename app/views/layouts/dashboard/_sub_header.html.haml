@@ -1,0 +1,23 @@
+%nav.navbar.sub-header-nav.navbar-expand-lg.navbar-light.border-bottom.px-4
+  .container-fluid.p-0
+    - if action_name == 'index'
+      .dropdown.toggle-hover.new-protocol
+        %button.btn.btn-lg.btn-block.btn-success.dropdown-toggle#newProtocolButton{ type: 'button', data: { toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' } }<
+          = icon('fas', 'plus mr-2')
+          = 'Start a New Protocol'
+        .dropdown-menu.w-100{ aria: { labelledby: 'newProtocolButton' } }
+          = link_to details_protocol_path(type: 'Study'), class: 'dropdown-item d-flex justify-content-between align-items-center' do
+            = 'New Research Study'
+            = icon('fas', 'question-circle ml-2 text-primary', title: 'A Research Study with defined aims and outcomes', data: { toggle: 'tooltip', placement: 'right' })
+          = link_to details_protocol_path(type: 'Project'), class: 'dropdown-item d-flex justify-content-between align-items-center' do
+            = 'New Project'
+            = icon('fas', 'question-circle ml-2 text-primary', title: 'Non-study-specific service requests or anything that is not a Research Study', data: { toggle: 'tooltip', placement: 'right' })
+    .navbar-nav.align-items-center
+      .nav-item
+        = link_to epic_queues_path, class: 'btn btn-lg btn-info mr-2' do
+          = icon('fas', 'search mr-1')
+          = 'View Epic Queue'
+      .nav-item
+        = link_to settings_path, class: 'btn btn-lg btn-warning' do
+          = icon('fas', 'cogs mr-1  ')
+          = 'Change Settings'
