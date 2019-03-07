@@ -1,28 +1,31 @@
 .substep#protocolInformationSection
   .form-group.mb-4
-    %h4.text-primary
-      = "Start by filling out some basic information so that we can determine the appropriate pricing for your #{type}."
-  .form-group.mb-4
-    = render 'shared/required_fields_notice'
+    - if @protocol.new_record?
+      %h4.text-primary
+        = "Start by filling out some basic information about your Study so that we can determine the appropriate pricing for it."
   - if type == 'Study'
-    .form-row.mt-4.mb-5
-      %h5.col-12
-        = 'If your Study already has a Research Master ID, enter it here and we will fill in some information for you.'
-      .form-group.col-6.mb-0
+    .form-row.mb-4
+      .form-group.col-12.mb-0
+        %h5
+          = 'If your Study has a Research Master ID, enter it here and we will automatically fill in some information for you.'
+      .form-group.col-6
         = label_tag :rmid, 'Research Master ID'
         = text_field_tag :rmid, '', class: 'form-control'
-  .form-row
+  .form-group.mb-4
+    = render 'shared/required_fields_notice'
+  .form-row.mb-4
+    %h5.col-12.pb-1.border-bottom
+      = 'General Study Information'
     .form-group.col-6
       = label_tag :title, "#{type} Title", class: 'required'
       = text_field_tag :title, '', class: 'form-control'
     .form-group.col-6
       = label_tag :short_title, 'Short Title', class: 'required'
       = text_field_tag :short_title, '', class: 'form-control'
-  - if type == 'Project'
-    .form-group
-      = label_tag :description
-      = text_area_tag :description, '', class: 'form-control'
-  .form-row
+    - if type == 'Project'
+      .form-group.col-12
+        = label_tag :description, 'Description'
+        = text_area_tag :description, '', class: 'form-control'
     .form-group.col-3
       = label_tag :funding_status, 'Funding Status', class: 'required'
       = select_tag :funding_status, options_for_select(['Funded', 'Pending Funding']), class: 'selectpicker', include_blank: true
@@ -31,30 +34,75 @@
       = label_tag :funding_source, 'Funding Source', class: 'required'
       = select_tag :funding_source, options_for_select(['College Department', 'Federal', 'Foundation/Organization', 'Industry-Initiated/Sponsored', 'Internally Funded Pilot Project', 'Investigator-Initiated/Sponsored', 'Student Funded Research']), class: 'selectpicker', include_blank: true
     .form-group.col-3
-      = label_tag :start_date, 'Estimated Start Date', class: 'required'
+      = label_tag :start_date, 'Funding Start Date'
       .input-group
-        = text_field_tag :start_date, '', class: 'form-control', placeholder: 'MM/DD/YYYY', data: { provide: 'datepicker' }
+        = text_field_tag :start_date, '', class: 'form-control', placeholder: 'MM/DD/YYYY', data: { provide: 'datepicker', date_today_highlight: true }
         .input-group-append
           = label_tag :start_date, class: 'input-group-text' do
             = icon('fas', 'calendar')
     .form-group.col-3
-      = label_tag :end_date, 'Estimated End Date', class: 'required'
+      = label_tag :end_date, 'Funding End Date'
       .input-group
-        = text_field_tag :end_date, '', class: 'form-control', placeholder: 'MM/DD/YYYY', data: { provide: 'datepicker' }
+        = text_field_tag :end_date, '', class: 'form-control', placeholder: 'MM/DD/YYYY', data: { provide: 'datepicker', date_today_highlight: true }
         .input-group-append
           = label_tag :end_date, class: 'input-group-text' do
             = icon('fas', 'calendar')
-  .form-group
-    = label_tag :sponsor_name, 'Sponsor Name', class: 'required'
-    = text_field_tag :sponsor_name, '', class: 'form-control'
-  .form-row.m-0
+    .form-group.col-6
+      = label_tag :sponsor_name, 'Name of Sponsor', class: 'required'
+      = text_field_tag :sponsor_name, '', class: 'form-control'
     .form-group.col-2
       = label_tag :selected_for_epic, 'Publish Study in Epic', class: 'required'
       = check_box_tag :selected_for_epic, true, false, data: { toggle: 'toggle', on: 'Yes', off: 'No', style: 'col-6' }
-  .form-group.border-top.mt-4.mb-0.pt-4<>
+
+  .form-row.federal-dependent.mb-4
+    %h5.col-12.pb-1.border-bottom
+      = 'Federal Grant Information'
+    .form-group.col-6
+      = label_tag :federal_grant_title, 'Title'
+      = text_field_tag :federal_grant_title, '', class: 'form-control'
+    .form-group.col-3
+      = label_tag :federal_grant_code, 'Code'
+      = select_tag :federal_grant_code, options_for_select([]), class: 'selectpicker', include_blank: true
+    .form-group.col-3
+      = label_tag :federal_grant_serial_number, 'Serial Number'
+      = text_field_tag :federal_grant_serial_number, '', class: 'form-control'
+    .form-group.col-3
+      = label_tag :federal_phs_sponsor, 'PHS Sponsor'
+      = select_tag :federal_phs_sponsor, options_for_select([]), class: 'selectpicker', include_blank: true
+      %small.form-text.text-muted
+        = 'Select either a PHS'
+        %strong
+          = '-OR-'
+        = 'Non-PHS Sponsor'
+    .form-group.col-3
+      = label_tag :federal_no_phs_sponsor, 'Non-PHS Sponsor'
+      = select_tag :federal_no_phs_sponsor, options_for_select([]), class: 'selectpicker', include_blank: true
+
+  .form-row.mb-4
+    %h5.col-12.pb-1.border-bottom
+      = 'Contact Information'
+    .form-group.col-6
+      = label_tag :guaranator_name, 'Name'
+      = text_field_tag :guaranator_name, '', class: 'form-control'
+    .form-group.col-3
+      = label_tag :guaranator_phone, 'Phone'
+      .input-group
+        = telephone_field_tag :guaranator_phone, '', class: 'form-control', placeholder: '555-555-5555'
+        .input-group-append
+          = label_tag :guaranator_phone, class: 'input-group-text' do
+            = icon('fas', 'phone')
+    .form-group.col-3
+      = label_tag :guaranator_email, 'Email'
+      .input-group
+        = email_field_tag :guaranator_email, '', class: 'form-control', placeholder: 'netid@musc.edu'
+        .input-group-append
+          = label_tag :guaranator_email, class: 'input-group-text' do
+            = icon('fas', 'envelope')
+
+  .form-group.border-top.mb-0.pt-4<>
     = link_to protocols_path, class: 'btn btn-lg btn-outline-primary' do
       = icon('fas', 'arrow-left mr-2')
       = 'Dashboard'
-    %button.btn.btn-lg.btn-outline-primary.float-right.validate{ type: 'button', data: { group: 'protocolInformation', href: 'Study' ? '#financialInformation' : '#authorizedUsers'} }<
+    %button.btn.btn-lg.btn-outline-primary.float-right.validate{ type: 'button', data: { group: 'protocolInformation', href: 'Study' ? '#researchInformation' : '#authorizedUsers'} }<
       = 'Continue'
       = icon('fas', 'arrow-right ml-2')

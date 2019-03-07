@@ -26,4 +26,4 @@ $ ->
     $(".substep-link#protocolInformation, .substep#protocolInformationSection").addClass('active')
   else
     $('.substep-link.active, .substep.active').removeClass('active')
-    $(".substep-link#{href}, .substep#{href}Section").addClass('active')
+    $(".substep-link#{href}, .substep#{href}Section").addClass('active').removeClass('disabled')

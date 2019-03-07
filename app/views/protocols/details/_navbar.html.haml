@@ -4,10 +4,6 @@
       .nav-item
         = link_to "#{type} Information", '#protocolInformation', class: 'nav-link substep-link', id: 'protocolInformation'
       .nav-item
-        = link_to "Financial Information", '#financialInformation', class: 'nav-link substep-link', id: 'financialInformation'
+        = link_to "Research Details", '#researchInformation', class: ['nav-link substep-link', protocol.group_valid?(:protocol_information) ? '' : 'disabled'], id: 'researchInformation'
       .nav-item
-        = link_to "Involvements", '#researchInvolving', class: 'nav-link substep-link', id: 'researchInvolving'
-      .nav-item
-        = link_to "Impact Areas", '#impactAreas', class: 'nav-link substep-link', id: 'impactAreas'
-      .nav-item
-        = link_to "Authorized Users", '#authorizedUsers', class: 'nav-link substep-link', id: 'authorizedUsers'
+        = link_to "Authorized Users", '#authorizedUsers', class: ['nav-link substep-link', protocol.group_valid?(:research_information) ? '' : 'disabled'], id: 'authorizedUsers'
