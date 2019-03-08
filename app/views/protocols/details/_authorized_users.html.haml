@@ -1,6 +1,6 @@
 .substep#authorizedUsersSection
   .form-group.border-top.mt-4.mb-0.pt-4
-    = link_to '#researchInformation', class: 'btn btn-lg btn-outline-primary back' do
+    = link_to type == 'Study' ? '#researchInformation' : '#protocolInformation', class: 'btn btn-lg btn-outline-primary back' do
       = icon('fas', 'arrow-left')
       = 'Research Details'
     %button.btn.btn-lg.btn-outline-primary.float-right.validate{ type: 'button', data: { group: 'authorizedUsers', href: 'services' } }<

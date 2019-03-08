@@ -1,4 +1,6 @@
 $ ->
+  setActiveSubStep()
+
   $(document).on 'click', '.substeps-nav .nav-link, a.back', (event) ->
     event.preventDefault()
     setActiveSubStep($(this).attr('href'))

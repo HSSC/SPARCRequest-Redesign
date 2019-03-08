@@ -9,6 +9,10 @@ class ProtocolsController < ApplicationController
   def show
   end
 
+  def create
+    # protocol would be created here
+  end
+
   def validate
     unless @protocol.group_valid?(params[:group].underscore.to_sym)
       @errors = @protocol.errors

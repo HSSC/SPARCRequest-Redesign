@@ -100,8 +100,8 @@
         = label_tag :human_subjects_info_record_irb, 'IRB of Record'
         = text_field_tag :human_subjects_info_record_irb, '', class: 'form-control'
       .form-group.col-4
-        = label_tag :human_subjects_info_study_phases, 'Study Phases'
-        = select_tag :human_subjects_info_study_phases, options_for_select(['0', 'I', 'Ia', 'Ib', 'II', 'IIa', 'IIb', 'III', 'IIIa', 'IIIb', 'IV']), class: 'selectpicker', include_blank: true
+        = label_tag :human_subjects_info_study_phases, 'Study Phase(s)'
+        = select_tag :human_subjects_info_study_phases, options_for_select(['0', 'I', 'Ia', 'Ib', 'II', 'IIa', 'IIb', 'III', 'IIIa', 'IIIb', 'IV']), class: 'selectpicker', multiple: true
       .form-group.col-4
         = label_tag :human_subjects_info_submission_type, 'Submission Type'
         = select_tag :human_subjects_info_submission_type, options_for_select(['Exempt', 'Expedited', 'Full Board']), class: 'selectpicker', include_blank: true
@@ -181,6 +181,6 @@
     = link_to '#protocolInformation', class: 'btn btn-lg btn-outline-primary back' do
       = icon('fas', 'arrow-left')
       = 'Study Information'
-    %button.btn.btn-lg.btn-outline-primary.float-right.validate{ type: 'button', data: { group: 'researchInformation', href: '#authorizedUsers' } }<
+    %button.btn.btn-lg.btn-outline-primary.float-right
       = 'Continue'
       = icon('fas', 'arrow-right ml-2')

@@ -1,10 +1,8 @@
 .card.col-8.offset-2.p-0
-  %form.form
-    .card-body
-      = render 'protocols/details/navbar', protocol: @protocol, type: @type
+  .card-body
+    = render 'protocols/details/navbar', protocol: @protocol, type: @type
+    = form_tag protocols_path, method: :post, remote: true, class: 'form' do
+      = hidden_field_tag :type, @type
       = render 'protocols/details/protocol_information', protocol: @protocol, type: @type
       = render 'protocols/details/research_information', protocol: @protocol, type: @type
-      = render 'protocols/details/authorized_users', protocol: @protocol, type: @type
-
-:javascript
-  setActiveSubStep()
+    = render 'protocols/details/authorized_users', protocol: @protocol, type: @type

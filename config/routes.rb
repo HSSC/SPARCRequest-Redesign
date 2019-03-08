@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :epic_queues, only: [:index] do
   end
 
-  resources :protocols, only: [:index, :show] do
+  resources :protocols, only: [:index, :show, :create] do
   end
 
   resource :protocol, only: [] do

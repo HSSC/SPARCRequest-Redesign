@@ -3,7 +3,8 @@
     .navbar-nav
       .nav-item
         = link_to "#{type} Information", '#protocolInformation', class: 'nav-link substep-link', id: 'protocolInformation'
+      - if type == 'Study'
+        .nav-item
+          = link_to "Research Details", '#researchInformation', class: ['nav-link substep-link', !protocol.new_record? || protocol.group_valid?(:protocol_information) ? '' : 'disabled'], id: 'researchInformation'
       .nav-item
-        = link_to "Research Details", '#researchInformation', class: ['nav-link substep-link', !protocol.new_record? || protocol.group_valid?(:protocol_information) ? '' : 'disabled'], id: 'researchInformation'
-      .nav-item
-        = link_to "Authorized Users", '#authorizedUsers', class: ['nav-link substep-link', !protocol.new_record? || protocol.group_valid?(:research_information) ? '' : 'disabled'], id: 'authorizedUsers'
+        = link_to "Authorized Users", '#authorizedUsers', class: ['nav-link substep-link', !protocol.new_record? ? '' : 'disabled'], id: 'authorizedUsers'
