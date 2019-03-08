@@ -13,6 +13,38 @@ $ ->
         href: $(this).data('href')
         type: getProtocolType()
 
+  toggleFederalDependents()
+  $(document).on 'change', '#funding_source', ->
+    toggleFederalDependents()
+
+  toggleImpactAreaOther()
+  $(document).on 'change', '#impact_area_other', ->
+    toggleImpactAreaOther()
+
+  $('[name=research_involving]').each ->
+    toggleResearchInvolvingDependents($(this).data('category'))
+  $(document).on 'change', '[name=research_involving]', ->
+    console.log $(this).data('category')
+    toggleResearchInvolvingDependents($(this).data('category'))
+
+toggleFederalDependents = () ->
+  if $('#funding_source').val() == 'Federal'
+    $('.federal-dependent').removeClass('d-none')
+  else
+    $('.federal-dependent').addClass('d-none')
+
+toggleImpactAreaOther = () ->
+  if $('#impact_area_other').prop('checked')
+    $('#impact_area_other_text').removeClass('d-none')
+  else
+    $('#impact_area_other_text').addClass('d-none')
+
+toggleResearchInvolvingDependents = (category) ->
+  if $("#research_involving_#{category.replace('-', '_')}").prop('checked')
+    $(".#{category}-dependent").removeClass('d-none')
+  else
+    $(".#{category}-dependent").addClass('d-none')
+
 (exports ? this).getProtocolType = () ->
   type = (new URL(window.location)).searchParams.get('type')
 

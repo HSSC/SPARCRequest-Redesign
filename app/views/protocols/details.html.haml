@@ -3,7 +3,8 @@
     .card-body
       = render 'protocols/details/navbar', protocol: @protocol, type: @type
       = render 'protocols/details/protocol_information', protocol: @protocol, type: @type
-      = render 'protocols/details/financial_information', protocol: @protocol, type: @type
+      = render 'protocols/details/research_information', protocol: @protocol, type: @type
+      = render 'protocols/details/authorized_users', protocol: @protocol, type: @type
 
 :javascript
   setActiveSubStep()

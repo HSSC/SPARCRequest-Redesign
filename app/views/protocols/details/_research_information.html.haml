@@ -1,0 +1,186 @@
+.substep#researchInformationSection
+  - if protocol.new_record?
+    .form-group.mb-4
+      %h4.text-primary
+        = "Now you will need to provide some details about the research being conducted for this Study."
+  .form-group.mb-4
+    = render 'shared/required_fields_notice'
+  .form-group.mb-4
+    %h5
+      = 'What type of Study is this?'
+      %small.form-text.text-muted
+        = 'Check all that apply'
+    .custom-control.custom-checkbox
+      = check_box_tag :study_type, 'clinical_trials', false, id: 'study_type_clinical_trials', class: 'custom-control-input'
+      = label_tag :study_type_clinical_trials, 'Clinical Trials', class: 'custom-control-label'
+    .custom-control.custom-checkbox
+      = check_box_tag :study_type, 'basic_science', false, id: 'study_type_basic_science', class: 'custom-control-input'
+      = label_tag :study_type_basic_science, 'Basic Science', class: 'custom-control-label'
+    .custom-control.custom-checkbox
+      = check_box_tag :study_type, 'translational_science', false, id: 'study_type_translational_science', class: 'custom-control-input'
+      = label_tag :study_type_translational_science, 'Translational Science', class: 'custom-control-label'
+  .form-group.mb-4
+    %h5
+      = 'What organizations are affiliated with or collaborating with this Study?'
+      %small.form-text.text-muted
+        = 'Check all that apply'
+    .custom-control.custom-checkbox
+      = check_box_tag :affiliation, 'cancer_center', false, id: 'affiliation_cancer_center', class: 'custom-control-input'
+      = label_tag :affiliation_cancer_center, 'Cancer Center', class: 'custom-control-label'
+    .custom-control.custom-checkbox
+      = check_box_tag :affiliation, 'cchp', false, id: 'affiliation_cchp', class: 'custom-control-input'
+      = label_tag :affiliation_cchp, 'CCHP', class: 'custom-control-label'
+    .custom-control.custom-checkbox
+      = check_box_tag :affiliation, 'center_oral_health', false, id: 'affiliation_center_oral_health', class: 'custom-control-input'
+      = label_tag :affiliation_center_oral_health, 'Center for Oral Health Research', class: 'custom-control-label'
+    .custom-control.custom-checkbox
+      = check_box_tag :affiliation, 'cobre_cardiovasular', false, id: 'affiliation_cobre_cardiovasular', class: 'custom-control-input'
+      = label_tag :affiliation_cobre_cardiovasular, 'COBRE: Cardiovascular Disease', class: 'custom-control-label'
+    .custom-control.custom-checkbox
+      = check_box_tag :affiliation, 'cobre_lipidomics', false, id: 'affiliation_cobre_lipidomics', class: 'custom-control-input'
+      = label_tag :affiliation_cobre_lipidomics, 'COBRE: Lipidomics', class: 'custom-control-label'
+    .custom-control.custom-checkbox
+      = check_box_tag :affiliation, 'cobre_redox', false, id: 'affiliation_cobre_redox', class: 'custom-control-input'
+      = label_tag :affiliation_cobre_redox, 'COBRE: Redox', class: 'custom-control-label'
+    .custom-control.custom-checkbox
+      = check_box_tag :affiliation, 'cobre_stroke', false, id: 'affiliation_cobre_stroke', class: 'custom-control-input'
+      = label_tag :affiliation_cobre_stroke, 'COBRE: Stroke Recovery', class: 'custom-control-label'
+    .custom-control.custom-checkbox
+      = check_box_tag :affiliation, 'inbre', false, id: 'affiliation_inbre', class: 'custom-control-input'
+      = label_tag :affiliation_inbre, 'INBRE', class: 'custom-control-label'
+    .custom-control.custom-checkbox
+      = check_box_tag :affiliation, 'reach', false, id: 'affiliation_reach', class: 'custom-control-input'
+      = label_tag :affiliation_reach, 'REACH', class: 'custom-control-label'
+  .form-group.mb-4
+    %h5
+      = 'What areas are being impacted by the research being conducted?'
+      %small.form-text.text-muted
+        = 'Check all that apply'
+    .custom-control.custom-checkbox
+      = check_box_tag :impact_area, 'pediatrics', false, id: 'impact_area_pediatrics', class: 'custom-control-input'
+      = label_tag :impact_area_pediatrics, 'Pediatrics', class: 'custom-control-label'
+    .custom-control.custom-checkbox
+      = check_box_tag :impact_area, 'hiv_aids', false, id: 'impact_area_hiv_aids', class: 'custom-control-input'
+      = label_tag :impact_area_hiv_aids, 'HIV/AIDS', class: 'custom-control-label'
+    .custom-control.custom-checkbox
+      = check_box_tag :impact_area, 'hypertension', false, id: 'impact_area_hypertension', class: 'custom-control-input'
+      = label_tag :impact_area_hypertension, 'Hypertension', class: 'custom-control-label'
+    .custom-control.custom-checkbox
+      = check_box_tag :impact_area, 'stroke', false, id: 'impact_area_stroke', class: 'custom-control-input'
+      = label_tag :impact_area_stroke, 'Stroke', class: 'custom-control-label'
+    .custom-control.custom-checkbox
+      = check_box_tag :impact_area, 'diabetes', false, id: 'impact_area_diabetes', class: 'custom-control-input'
+      = label_tag :impact_area_diabetes, 'Diabetes', class: 'custom-control-label'
+    .custom-control.custom-checkbox
+      = check_box_tag :impact_area, 'cancer', false, id: 'impact_area_cancer', class: 'custom-control-input'
+      = label_tag :impact_area_cancer, 'Cancer', class: 'custom-control-label'
+    .custom-control.custom-checkbox
+      = check_box_tag :impact_area, 'community_engagement', false, id: 'impact_area_community_engagement', class: 'custom-control-input'
+      = label_tag :impact_area_community_engagement, 'Community Engagement', class: 'custom-control-label'
+    .custom-control.custom-checkbox 
+      = check_box_tag :impact_area, 'other', false, id: 'impact_area_other', class: 'custom-control-input'
+      = label_tag :impact_area_other, 'Other', class: 'custom-control-label'
+    = text_field_tag :impact_area_other_text, '', class: 'form-control col-6', placeholder: 'Please specify...'
+  .form-group.mb-4
+    %h5
+      = 'Which of the following are being used in the research conducted?'
+      %small.form-text.text-muted
+        = 'Check all that apply'
+    .custom-control.custom-checkbox
+      = check_box_tag :research_involving, 'human_subjects', false, id: 'research_involving_human_subjects', class: 'custom-control-input', data: { category: 'human-subjects' }
+      = label_tag :research_involving_human_subjects, 'Human Subjects', class: 'custom-control-label'
+    .research-involving-dependent.human-subjects-dependent.form-row.d-none
+      .form-group.col-4
+        = label_tag :human_subjects_info_nct_number, 'National Clinical Trials (NCT) Number'
+        = text_field_tag :human_subjects_info_nct_number, '', class: 'form-control'
+      .form-group.col-4
+        = label_tag :human_subjects_info_pro_number, 'PRO Number'
+        = text_field_tag :human_subjects_info_pro_number, '', class: 'form-control'
+      .form-group.col-4
+        = label_tag :human_subjects_info_record_irb, 'IRB of Record'
+        = text_field_tag :human_subjects_info_record_irb, '', class: 'form-control'
+      .form-group.col-4
+        = label_tag :human_subjects_info_study_phases, 'Study Phases'
+        = select_tag :human_subjects_info_study_phases, options_for_select(['0', 'I', 'Ia', 'Ib', 'II', 'IIa', 'IIb', 'III', 'IIIa', 'IIIb', 'IV']), class: 'selectpicker', include_blank: true
+      .form-group.col-4
+        = label_tag :human_subjects_info_submission_type, 'Submission Type'
+        = select_tag :human_subjects_info_submission_type, options_for_select(['Exempt', 'Expedited', 'Full Board']), class: 'selectpicker', include_blank: true
+      .form-group.col-4
+        = label_tag :human_subjects_info_application_status, 'Application Status'
+        = select_tag :human_subjects_info_application_status, options_for_select(['Pending', 'Approved']), class: 'selectpicker', include_blank: true
+      .form-group.col-4
+        = label_tag :human_subjects_info_initial_irb_approval_date, 'Initial IRB Approval Date'
+        .input-group
+          = text_field_tag :human_subjects_info_initial_irb_approval_date, '', class: 'form-control', placeholder: 'MM/DD/YYYY', data: { provide: 'datepicker', date_today_highlight: true }
+          .input-group-append
+            = label_tag :human_subjects_info_initial_irb_approval_date, class: 'input-group-text' do
+              = icon('fas', 'calendar')
+      .form-group.col-4
+        = label_tag :human_subjects_info_current_irb_approval_date, 'Current IRB Approval Date'
+        .input-group
+          = text_field_tag :human_subjects_info_current_irb_approval_date, '', class: 'form-control', placeholder: 'MM/DD/YYYY', data: { provide: 'datepicker', date_today_highlight: true }
+          .input-group-append
+            = label_tag :human_subjects_info_current_irb_approval_date, class: 'input-group-text' do
+              = icon('fas', 'calendar')
+      .form-group.col-4
+        = label_tag :human_subjects_info_irb_expiration_date, 'IRB Expiration Date'
+        .input-group
+          = text_field_tag :human_subjects_info_irb_expiration_date, '', class: 'form-control', placeholder: 'MM/DD/YYYY', data: { provide: 'datepicker', date_today_highlight: true }
+          .input-group-append
+            = label_tag :human_subjects_info_irb_expiration_date, class: 'input-group-text' do
+              = icon('fas', 'calendar')
+    .custom-control.custom-checkbox
+      = check_box_tag :research_involving, 'vertebrate_animals', false, id: 'research_involving_vertebrate_animals', class: 'custom-control-input', data: { category: 'vertebrate-animals' }
+      = label_tag :research_involving_vertebrate_animals, 'Vertebrate Animals', class: 'custom-control-label'
+    .research-involving-dependent.vertebrate-animals-dependent.form-row.d-none
+      .form-group.col-4
+        = label_tag :vertebrate_animals_info_iacuc_number, 'IACUC Number'
+        = text_field_tag :vertebrate_animals_info_iacuc_number, '', class: 'form-control'
+      .form-group.col-4
+        = label_tag :vertebrate_animals_info_iacuc_name, 'Name of IACUC'
+        = text_field_tag :vertebrate_animals_info_iacuc_name, '', class: 'form-control'
+      .form-group.col-4
+      .form-group.col-4
+        = label_tag :vertebrate_animals_info_iacuc_approval_date, 'IACUC Approval Date'
+        .input-group
+          = text_field_tag :vertebrate_animals_info_iacuc_approval_date, '', class: 'form-control', placeholder: 'MM/DD/YYYY', data: { provide: 'datepicker', date_today_highlight: true }
+          .input-group-append
+            = label_tag :vertebrate_animals_info_iacuc_approval_date, class: 'input-group-text' do
+              = icon('fas', 'calendar')
+      .form-group.col-4
+        = label_tag :vertebrate_animals_info_iacuc_expiration_date, 'IACUC Expiration Date'
+        .input-group
+          = text_field_tag :vertebrate_animals_info_iacuc_expiration_date, '', class: 'form-control', placeholder: 'MM/DD/YYYY', data: { provide: 'datepicker', date_today_highlight: true }
+          .input-group-append
+            = label_tag :vertebrate_animals_info_iacuc_expiration_date, class: 'input-group-text' do
+              = icon('fas', 'calendar')
+    .custom-control.custom-checkbox
+      = check_box_tag :research_involving, 'investigational_products', false, id: 'research_involving_investigational_products', class: 'custom-control-input', data: { category: 'investigational-products' }
+      = label_tag :research_involving_investigational_products, 'Investigational Products', class: 'custom-control-label'
+    .research-involving-dependent.investigational-products-dependent.form-row.d-none
+      .form-group.col-4
+        = label_tag :investigational_products_info_ind_number, 'IND Number'
+        = text_field_tag :investigational_products_info_ind_number, '', class: 'form-control'
+      .form-group.col-4
+        = label_tag :investigational_products_info_product_type, 'Product Type'
+        = select_tag :investigational_products_info_product_type, options_for_select(['IDE', 'HDE', 'HUD']), class: 'selectpicker', include_blank: true
+      .form-group.col-4
+        = label_tag :investigational_products_info_product_number, 'Product Number'
+        = text_field_tag :investigational_products_info_product_number, '', class: 'form-control'
+    .custom-control.custom-checkbox
+      = check_box_tag :research_involving, 'ip_patents', false, id: 'research_involving_ip_patents', class: 'custom-control-input', data: { category: 'ip-patents' }
+      = label_tag :research_involving_ip_patents, 'IP/Patents', class: 'custom-control-label'
+    .research-involving-dependent.ip-patents-dependent.form-row.d-none
+      .form-group.col-4
+        = label_tag :ip_patents_info_patent_number, 'Patent Number'
+        = text_field_tag :ip_patents_info_patent_number, '', class: 'form-control'
+      .form-group.col-8
+        = label_tag :ip_patents_info_inventors, 'Inventors'
+        = text_area_tag :ip_patents_info_inventors, '', class: 'form-control', rows: 1
+  .form-group.border-top.mt-4.mb-0.pt-4
+    = link_to '#protocolInformation', class: 'btn btn-lg btn-outline-primary back' do
+      = icon('fas', 'arrow-left')
+      = 'Study Information'
+    %button.btn.btn-lg.btn-outline-primary.float-right.validate{ type: 'button', data: { group: 'researchInformation', href: '#authorizedUsers' } }<
+      = 'Continue'
+      = icon('fas', 'arrow-right ml-2')

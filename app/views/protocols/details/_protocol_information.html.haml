@@ -1,6 +1,6 @@
 .substep#protocolInformationSection
-  .form-group.mb-4
-    - if @protocol.new_record?
+  - if protocol.new_record?
+    .form-group.mb-4
       %h4.text-primary
         = "Start by filling out some basic information about your Study so that we can determine the appropriate pricing for it."
   - if type == 'Study'
@@ -54,7 +54,7 @@
       = label_tag :selected_for_epic, 'Publish Study in Epic', class: 'required'
       = check_box_tag :selected_for_epic, true, false, data: { toggle: 'toggle', on: 'Yes', off: 'No', style: 'col-6' }
 
-  .form-row.federal-dependent.mb-4
+  .form-row.federal-dependent.d-none.mb-4
     %h5.col-12.pb-1.border-bottom
       = 'Federal Grant Information'
     .form-group.col-6
@@ -103,6 +103,6 @@
     = link_to protocols_path, class: 'btn btn-lg btn-outline-primary' do
       = icon('fas', 'arrow-left mr-2')
       = 'Dashboard'
-    %button.btn.btn-lg.btn-outline-primary.float-right.validate{ type: 'button', data: { group: 'protocolInformation', href: 'Study' ? '#researchInformation' : '#authorizedUsers'} }<
+    %button.btn.btn-lg.btn-outline-primary.float-right.validate{ type: 'button', data: { group: 'protocolInformation', href: type == 'Study' ? '#researchInformation' : '#authorizedUsers' } }<
       = 'Continue'
       = icon('fas', 'arrow-right ml-2')

@@ -19,6 +19,8 @@
 
   .dropdown-menu {
     .dropdown-item {
+      border-radius: 0;
+
       &:active {
         background: $gray-200;
         color: black;
@@ -127,6 +129,23 @@
 
 .tooltip {
   z-index: 10000;
+}
+
+.custom-control {
+  min-height: 2.5rem;
+  padding-left: 3rem;
+  display: flex;
+  align-items: center;
+
+  .custom-control-label {
+    font-size: 1.25rem;
+
+    &::before, &::after {
+      transform: scale(1.75);
+      top: .5rem;
+      left: -2rem;
+    }
+  }
 }
 
 /* Bootstrap-Toggle Styling */

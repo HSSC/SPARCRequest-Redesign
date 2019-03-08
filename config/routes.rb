@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resource :protocol, only: [] do
     get :validate
     get :details
+    get :services
   end
 
   resources :settings, only: [:index] do
