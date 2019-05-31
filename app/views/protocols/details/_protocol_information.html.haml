@@ -2,7 +2,7 @@
   - if protocol.new_record?
     .form-group.mb-4
       %h4.text-primary
-        = "Start by filling out some basic information about your Study so that we can determine the appropriate pricing for it."
+        = "In order to create your #{type}, please provide us with the following information."
   - if type == 'Study'
     .form-row.mb-4
       .form-group.col-12.mb-0
@@ -102,7 +102,7 @@
               = icon('fas', 'envelope')
 
   .form-group.border-top.mb-0.pt-4<>
-    = link_to protocols_path, class: 'btn btn-lg btn-outline-primary' do
+    = link_to dashboard_path, class: 'btn btn-lg btn-outline-primary' do
       = icon('fas', 'arrow-left mr-2')
       = 'Dashboard'
     - if type == 'Study'

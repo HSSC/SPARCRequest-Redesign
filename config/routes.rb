@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  resources :authorized_users, only: [:create] do
+  end
+
   resource :base, only: [] do
     get :home
   end

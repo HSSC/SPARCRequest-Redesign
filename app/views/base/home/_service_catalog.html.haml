@@ -4,7 +4,7 @@
       = "Browse Our Service Catalog"
     .col-6.offset-1#serviceCatalogAccordion
       .input-group.mb-3
-        %input.form-control.form-control-lg{ type: 'text', placeholder: "Search for services..." }
+        = text_field_tag :service_search, '', class: 'form-control form-control-lg', placeholder: "Search for services..."
         .input-group-append
           %span.input-group-text
             = icon('fas', 'search fa-lg')

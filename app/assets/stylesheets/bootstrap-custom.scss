@@ -183,3 +183,10 @@
     height: 30px;
   }
 }
+
+/* FontAwesome Styling */
+.input-group-append {
+  .fa, .fas, .far, .fal, .fab {
+    @extend .text-muted;
+  }
+}

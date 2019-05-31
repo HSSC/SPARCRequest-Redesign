@@ -1,8 +1,4 @@
 .substep#researchInformationSection
-  - if protocol.new_record?
-    .form-group.mb-4
-      %h4.text-primary
-        = "Now you will need to provide some details about the research being conducted for this Study."
   .form-group.mb-4
     = render 'shared/required_fields_notice'
   .form-group.mb-4
@@ -21,7 +17,7 @@
       = label_tag :study_type_translational_science, 'Translational Science', class: 'custom-control-label'
   .form-group.mb-4
     %h5
-      = 'What organizations are affiliated with or collaborating with this Study?'
+      = 'Which of the following organizations are affiliated with or collaborating with this Study?'
       %small.form-text.text-muted
         = 'Check all that apply'
     .custom-control.custom-checkbox
@@ -53,7 +49,7 @@
       = label_tag :affiliation_reach, 'REACH', class: 'custom-control-label'
   .form-group.mb-4
     %h5
-      = 'What areas are being impacted by the research being conducted?'
+      = 'Which of the following areas are being impacted by the research being conducted in this Study?'
       %small.form-text.text-muted
         = 'Check all that apply'
     .custom-control.custom-checkbox
@@ -83,7 +79,7 @@
     = text_field_tag :impact_area_other_text, '', class: 'form-control col-6', placeholder: 'Please specify...'
   .form-group.mb-4
     %h5
-      = 'Which of the following are being used in the research conducted?'
+      = 'Which of the following groups are being used for the research conducted in this Study?'
       %small.form-text.text-muted
         = 'Check all that apply'
     .custom-control.custom-checkbox

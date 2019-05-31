@@ -9,6 +9,6 @@
             = "SPARC (Services, Pricing, and Applications for Research Center) "
           = "is a web-based research management system that integrates research and clinical care workflows with a focus on service request catalog, billing compliance, proposal and budget development, work fulfillment data collection, invoicing and billing, and impact data through grants and publication associations."
         - if current_user
-          = link_to 'Go to your Dashboard', protocols_path, class: 'btn btn-lg btn-primary'
+          = link_to 'Go to your Dashboard', dashboard_path, class: 'btn btn-lg btn-primary'
         - else
           = link_to 'Get Started', new_user_session_path, class: 'btn btn-lg btn-primary'

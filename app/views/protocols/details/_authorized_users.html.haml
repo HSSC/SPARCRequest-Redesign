@@ -1,4 +1,25 @@
 .substep#authorizedUsersSection
+  = form_tag authorized_users_path, method: :post, remote: true, id: 'primaryPiForm', class: 'form' do
+    - if protocol.new_record?
+      .form-group.mb-4
+        %h4.text-primary
+          = "Now we need to add Authorized Users to your #{type}. Let's start with the Primary PI."
+          %br
+          = "This user is the Primary Principal Investigator for your #{type}."
+      .form-row.mb-4
+        .form-group.col-12.mb-0
+          %h5.mb-4
+            = link_to 'Click here', '', id: 'currentUserPrimaryPI'
+            = " if you are the Primary PI for your #{type}."
+          %h5
+            = "Otherwise search for the user below."
+        .form-group.col-6
+          .input-group.mb-3
+            = hidden_field_tag 'primary_pi[user_id]', current_user.id
+            = text_field_tag :authorized_user_search, '', class: 'form-control form-control-lg', placeholder: "Search for your #{type}'s Primary PI..."
+            .input-group-append
+              %span.input-group-text
+                = icon('fas', 'search fa-lg')
   .form-group.border-top.mt-4.mb-0.pt-4
     = link_to type == 'Study' ? '#researchInformation' : '#protocolInformation', class: 'btn btn-lg btn-outline-primary back' do
       = icon('fas', 'arrow-left')
