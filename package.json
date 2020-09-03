@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "bootstrap-datepicker": "^1.8.0",
-    "bootstrap-select": "^1.13.5",
+    "bootstrap-select": "^1.13.6",
     "bootstrap4-toggle": "^3.4.0"
   }
 }
